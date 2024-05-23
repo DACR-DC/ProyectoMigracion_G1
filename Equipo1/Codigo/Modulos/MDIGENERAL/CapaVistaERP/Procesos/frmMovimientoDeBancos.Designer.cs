@@ -360,6 +360,7 @@ namespace CapaVistaERP.Procesos
             this.btn_ayudas.Text = "Ayuda";
             this.btn_ayudas.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btn_ayudas.UseVisualStyleBackColor = false;
+            this.btn_ayudas.Click += new System.EventHandler(this.btn_ayudas_Click);
             // 
             // btn_cancelarMovimiento
             // 

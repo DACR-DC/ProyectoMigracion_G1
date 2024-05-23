@@ -138,7 +138,8 @@ namespace CapaVistaERP.Procesos
 
         private void btn_ayudas_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("De momento no disponible");
+            string rutaAyuda = @"..\..\..\..\..\..\..\Ayuda\Modulos\Ayudas\AyudasByTech.chm";
+            Help.ShowHelp(this, rutaAyuda, "Bancos.html");
         }
 
         private void button1_Click(object sender, EventArgs e)

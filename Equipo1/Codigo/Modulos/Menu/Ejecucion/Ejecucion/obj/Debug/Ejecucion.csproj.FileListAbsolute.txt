@@ -1152,3 +1152,19 @@ C:\Users\DELL\Desktop\labo analisis\holaaaaaa\Nueva carpeta\90%\ProyectoMigracio
 C:\Users\DELL\Desktop\labo analisis\holaaaaaa\Nueva carpeta\90%\ProyectoMigracion_G1\Equipo1\Codigo\Modulos\Menu\Ejecucion\Ejecucion\obj\Debug\Ejecucion.exe
 C:\Users\DELL\Desktop\labo analisis\holaaaaaa\Nueva carpeta\90%\ProyectoMigracion_G1\Equipo1\Codigo\Modulos\Menu\Ejecucion\Ejecucion\obj\Debug\Ejecucion.pdb
 C:\Users\callo\Music\GIT 2024\ProyectoMigracion_G1\Equipo1\Codigo\Modulos\Menu\Ejecucion\Ejecucion\bin\Debug\zu\CapaVistaERP.resources.dll
+C:\Users\callo\Music\GIT 2024\ProyectoMigracion_G1\Equipo1\Codigo\Modulos\Menu\Ejecucion\Ejecucion\bin\Debug\CapaVista.dll
+C:\Users\callo\Music\GIT 2024\ProyectoMigracion_G1\Equipo1\Codigo\Modulos\Menu\Ejecucion\Ejecucion\bin\Debug\CapaControlador.dll
+C:\Users\callo\Music\GIT 2024\ProyectoMigracion_G1\Equipo1\Codigo\Modulos\Menu\Ejecucion\Ejecucion\bin\Debug\CapaModelo.dll
+C:\Users\callo\Music\GIT 2024\ProyectoMigracion_G1\Equipo1\Codigo\Modulos\Menu\Ejecucion\Ejecucion\bin\Debug\CapaVistaERP.dll.config
+C:\Users\callo\Music\GIT 2024\ProyectoMigracion_G1\Equipo1\Codigo\Modulos\Menu\Ejecucion\Ejecucion\bin\Debug\CapaVista.pdb
+C:\Users\callo\Music\GIT 2024\ProyectoMigracion_G1\Equipo1\Codigo\Modulos\Menu\Ejecucion\Ejecucion\bin\Debug\CapaVista.dll.config
+C:\Users\callo\Music\GIT 2024\ProyectoMigracion_G1\Equipo1\Codigo\Modulos\Menu\Ejecucion\Ejecucion\bin\Debug\CapaControlador.pdb
+C:\Users\callo\Music\GIT 2024\ProyectoMigracion_G1\Equipo1\Codigo\Modulos\Menu\Ejecucion\Ejecucion\bin\Debug\CapaModelo.pdb
+C:\Users\d_car\OneDrive\Documentos\GitHub\ProyectoMigracion\ProyectoMigracion_G1\Equipo1\Codigo\Modulos\Menu\Ejecucion\Ejecucion\bin\Debug\CapaVista.dll
+C:\Users\d_car\OneDrive\Documentos\GitHub\ProyectoMigracion\ProyectoMigracion_G1\Equipo1\Codigo\Modulos\Menu\Ejecucion\Ejecucion\bin\Debug\CapaControlador.dll
+C:\Users\d_car\OneDrive\Documentos\GitHub\ProyectoMigracion\ProyectoMigracion_G1\Equipo1\Codigo\Modulos\Menu\Ejecucion\Ejecucion\bin\Debug\CapaModelo.dll
+C:\Users\d_car\OneDrive\Documentos\GitHub\ProyectoMigracion\ProyectoMigracion_G1\Equipo1\Codigo\Modulos\Menu\Ejecucion\Ejecucion\bin\Debug\CapaVistaERP.dll.config
+C:\Users\d_car\OneDrive\Documentos\GitHub\ProyectoMigracion\ProyectoMigracion_G1\Equipo1\Codigo\Modulos\Menu\Ejecucion\Ejecucion\bin\Debug\CapaVista.pdb
+C:\Users\d_car\OneDrive\Documentos\GitHub\ProyectoMigracion\ProyectoMigracion_G1\Equipo1\Codigo\Modulos\Menu\Ejecucion\Ejecucion\bin\Debug\CapaVista.dll.config
+C:\Users\d_car\OneDrive\Documentos\GitHub\ProyectoMigracion\ProyectoMigracion_G1\Equipo1\Codigo\Modulos\Menu\Ejecucion\Ejecucion\bin\Debug\CapaControlador.pdb
+C:\Users\d_car\OneDrive\Documentos\GitHub\ProyectoMigracion\ProyectoMigracion_G1\Equipo1\Codigo\Modulos\Menu\Ejecucion\Ejecucion\bin\Debug\CapaModelo.pdb

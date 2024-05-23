@@ -301,6 +301,12 @@ namespace CapaVistaERP.Procesos
                 }
             }
         }
+
+        private void btn_ayudas_Click(object sender, EventArgs e)
+        {
+            string rutaAyuda = @"..\..\..\..\..\..\..\Ayuda\Modulos\Ayudas\AyudasByTech.chm";
+            Help.ShowHelp(this, rutaAyuda, "AutorizacionesCompra.html");
+        }
     }
     }
 
