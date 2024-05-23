@@ -387,7 +387,37 @@ namespace CapaModeloERP
             }
             return datos;
         }
+        //David Carrillo 0901-20-3201
+        public DataTable ObtenerPagosPorFecha(DateTime fechaPago)
+        {
+            DataTable dtPagos = new DataTable();
 
+            using (OdbcConnection conn = con.connection())
+            {
+                string consulta = "SELECT p.id_pagoFact AS IDPago, " +
+                                  "p.noFactura AS NoFactura, " +
+                                  "p.cliente AS Cliente, " +
+                                  "p.banco AS Banco, " +
+                                  "p.concepto AS Concepto, " +
+                                  "p.monto_pago AS MontoPago, " +
+                                  "p.extra_pago AS ExtraPago, " +
+                                  "p.fecha_pago AS FechaPago, " +
+                                  "p.NIT AS NIT, " +
+                                  "p.num_recibo AS NumRecibo " +
+                                  "FROM tbl_pagofact p " +
+                                  "WHERE p.fecha_pago BETWEEN ? AND ? " +
+                                  "ORDER BY p.fecha_pago DESC";
+
+                using (OdbcCommand cmd = new OdbcCommand(consulta, conn))
+                {
+                    cmd.Parameters.AddWithValue("fechaPago", fechaPago);
+                    OdbcDataAdapter adapter = new OdbcDataAdapter(cmd);
+                    adapter.Fill(dtPagos);
+                }
+            }
+
+            return dtPagos;
+        }
         //David Carrillo 0901-20-3201 
         public double GetPrecio(string nombreProducto)
         {
@@ -607,6 +637,16 @@ namespace CapaModeloERP
 
                        // connection.Open();
                         cmd.ExecuteNonQuery();
+                    }
+                    if (faltantePago == 0)
+                    {
+                        string updateEstadoQuery = "UPDATE tbl_facturaxcobrar SET estado_facxcob = 'FACTURA PAGADA' WHERE NoFactura = ?";
+
+                        using (OdbcCommand cmd = new OdbcCommand(updateEstadoQuery, connection))
+                        {
+                            cmd.Parameters.AddWithValue("@NoFactura", noFactura);
+                            cmd.ExecuteNonQuery();
+                        }
                     }
                 }
             }
@@ -2546,6 +2586,45 @@ namespace CapaModeloERP
 
             }
         }
+
+        public void InsertarTipoCambio2(DateTime fecha, string moneda, double venta, double compra)
+        {
+            using (OdbcConnection connection = con.connection())
+            {
+                if (connection != null)
+                {
+                    using (OdbcTransaction transaction = connection.BeginTransaction())
+                    {
+                        try
+                        {
+                            // Insertar en la tabla tbl_tipocambio2
+                            string insertQuery = "INSERT INTO tbl_tipocambio2 (fecha, moneda, venta, compra) VALUES (?, ?, ?, ?)";
+                            using (OdbcCommand cmd = new OdbcCommand(insertQuery, connection, transaction))
+                            {
+                                cmd.Parameters.AddWithValue("@fecha", fecha);
+                                cmd.Parameters.AddWithValue("@moneda", moneda);
+                                cmd.Parameters.AddWithValue("@venta", venta);
+                                cmd.Parameters.AddWithValue("@compra", compra);
+
+                                cmd.ExecuteNonQuery();
+                            }
+
+                            // Confirmar la transacción si la inserción fue exitosa
+                            transaction.Commit();
+                        }
+                        catch (Exception ex)
+                        {
+                            // Revertir la transacción si ocurre algún error
+                            transaction.Rollback();
+                            Console.WriteLine($"Error al insertar tipo de cambio: {ex.Message}");
+                        }
+                    }
+                }
+            }
+        }
+
+
+
     }
 
 }

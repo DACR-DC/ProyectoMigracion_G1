@@ -208,84 +208,92 @@ namespace CapaVistaERP.Procesos
                 MessageBox.Show(" no encontrado", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
-            string coti = txt_numcoti.Text;
-            //Metodo buscar creditos a Carlos Guzman
-
-            DataTable detalleCotis = cn.Buscar("tbl_detalle_cotizacion", "tbl_cotizaciones_No_Cotizacion", coti);
-
-
-            dgv_detalle.Rows.Clear();
-
-
-
-            if (dgv_detalle.Columns.Count == 0)
+            try
             {
-                foreach (DataColumn column in detalleCoti.Columns)
+                string coti = txt_numcoti.Text;
+                DataTable detalleCotis = cn.Buscar("vista_detalle_cotizacion", "NoCotizacion", coti);
+
+                dgv_detalle.Rows.Clear();
+
+                if (dgv_detalle.Columns.Count == 0)
                 {
-                    if (column.ColumnName != "id_detalle_cotizacion" &&
-                        column.ColumnName != "tbl_clientes_id_cliente" &&
-                        column.ColumnName != "tbl_cotizaciones_No_Cotizacion")
+                    foreach (DataColumn column in detalleCotis.Columns)
                     {
-                        dgv_detalle.Columns.Add(column.ColumnName, column.ColumnName);
-                    }
-                }
-            }
-
-
-
-            if (detalleCotis.Rows.Count > 0)
-            {
-                foreach (DataRow row in detalleCotis.Rows)
-                {
-                    List<object> rowData = new List<object>();
-
-                    foreach (DataColumn column in detalleCoti.Columns)
-                    {
-                        if (column.ColumnName != "id_detalle_cotizacion" &&
-                            column.ColumnName != "tbl_clientes_id_cliente" &&
-                            column.ColumnName != "tbl_cotizaciones_No_Cotizacion")
+                        if (column.ColumnName != "NoDetalleCotizacion" &&
+                            column.ColumnName != "ClienteID" &&
+                            column.ColumnName != "NoCotizacion")
                         {
-
-                            if (column.ColumnName == "total_detCoti")
-                            {
-                                int productId = Convert.ToInt32(row["tbl_producto_cod_producto"]);
-
-                                DataTable result = cn.BuscarDato("precioUnitario_prod", "tbl_producto", "cod_producto", productId);
-                                double precioUnitario = 0.0; 
-
-                                if (result.Rows.Count > 0)
-                                {
-                                    precioUnitario = Convert.ToDouble(result.Rows[0]["precioUnitario_prod"]);
-                                }
-
-                                rowData.Add(precioUnitario);
-                            }
-
-                            if (column.ColumnName == "tbl_producto_cod_producto")
-                            {
-                                int productId = Convert.ToInt32(row["tbl_producto_cod_producto"]);
-                                DataTable result = cn.BuscarDato("nombre_prod", "tbl_producto", "cod_producto", productId);
-                                string nombreProd = string.Empty;
-                                if (result.Rows.Count > 0)
-                                {
-                                    nombreProd = result.Rows[0]["nombre_prod"].ToString();
-                                }
-
-                                rowData.Add(nombreProd);
-                            }
-                            else
-                            {
-                                rowData.Add(row[column.ColumnName]);
-                            }
-             
-
+                            dgv_detalle.Columns.Add(column.ColumnName, column.ColumnName);
                         }
                     }
-                    dgv_detalle.Rows.Add(rowData.ToArray());
+                }
+
+                if (dataGridView1.Columns.Count == 0)
+                {
+                    foreach (DataColumn column in detalleCotis.Columns)
+                    {
+                        dataGridView1.Columns.Add(column.ColumnName, column.ColumnName);
+                    }
+                }
+
+                if (detalleCotis.Rows.Count > 0)
+                {
+                    foreach (DataRow row in detalleCotis.Rows)
+                    {
+                        dataGridView1.Rows.Add(row.ItemArray);
+                    }
+
+                    foreach (DataRow row in detalleCotis.Rows)
+                    {
+                        List<object> rowData = new List<object>();
+
+                        foreach (DataColumn column in detalleCotis.Columns)
+                        {
+                            if (column.ColumnName != "NoDetalleCotizacion" &&
+                            column.ColumnName != "ClienteID" &&
+                            column.ColumnName != "NoCotizacion")
+                            {
+                                if (column.ColumnName == "TotalCotizacion")
+                                {
+                                    int productId = Convert.ToInt32(row["CodProducto"]);
+                                    DataTable result = cn.BuscarDato("PrecioUnitario", "vista_producto", "CodProducto", productId);
+                                    double precioUnitario = 0.0;
+
+                                    if (result.Rows.Count > 0)
+                                    {
+                                        precioUnitario = Convert.ToDouble(result.Rows[0]["PrecioUnitario"]);
+                                    }
+
+                                    rowData.Add(precioUnitario);
+                                }
+                                else if (column.ColumnName == "CodProducto")
+                                {
+                                    int productId = Convert.ToInt32(row["CodProducto"]);
+                                    DataTable result = cn.BuscarDato("Nombre", "vista_producto", "CodProducto", productId);
+                                    string nombreProd = string.Empty;
+                                    if (result.Rows.Count > 0)
+                                    {
+                                        nombreProd = result.Rows[0]["Nombre"].ToString();
+                                    }
+
+                                    rowData.Add(nombreProd);
+                                }
+                                else
+                                {
+                                    rowData.Add(row[column.ColumnName]);
+                                }
+                            }
+                        }
+                        dgv_detalle.Rows.Add(rowData.ToArray());
+                    }
                 }
             }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al buscar detalles de cotización: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
 
-           
+
         }
 
         private void btn_Pagar_Click(object sender, EventArgs e)

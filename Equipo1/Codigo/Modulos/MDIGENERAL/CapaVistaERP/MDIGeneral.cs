@@ -348,13 +348,19 @@ namespace CapaVistaERP
 
         private void button28_Click(object sender, EventArgs e)
         {
-            Abrir(new Procesos.tipodecombio());
+            Abrir(new Procesos.TipodecambioApi());
             hideSubMenu();
         }
 
         private void button30_Click(object sender, EventArgs e)
         {
             Abrir(new Procesos.PagoFacturaxCobrar());
+            hideSubMenu();
+        }
+
+        private void button34_Click(object sender, EventArgs e)
+        {
+            Abrir(new Procesos.Registro_pagos());
             hideSubMenu();
         }
     }

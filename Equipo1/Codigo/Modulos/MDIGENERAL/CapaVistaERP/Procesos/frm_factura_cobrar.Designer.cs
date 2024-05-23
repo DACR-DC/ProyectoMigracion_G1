@@ -30,14 +30,6 @@ namespace CapaVistaERP.Procesos
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frm_factura_cobrar));
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.btn_Pagar = new System.Windows.Forms.Button();
-            this.txt_total = new System.Windows.Forms.TextBox();
-            this.txt_iva = new System.Windows.Forms.TextBox();
-            this.txt_subtotal = new System.Windows.Forms.TextBox();
-            this.label16 = new System.Windows.Forms.Label();
-            this.label15 = new System.Windows.Forms.Label();
-            this.label14 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.dgv_detalle = new System.Windows.Forms.DataGridView();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
@@ -54,6 +46,7 @@ namespace CapaVistaERP.Procesos
             this.label21 = new System.Windows.Forms.Label();
             this.txt_numfactura = new System.Windows.Forms.TextBox();
             this.label20 = new System.Windows.Forms.Label();
+            this.btn_Buscar = new System.Windows.Forms.Button();
             this.txt_numcoti = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
@@ -68,105 +61,21 @@ namespace CapaVistaERP.Procesos
             this.label4 = new System.Windows.Forms.Label();
             this.txt_telefonocl = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.btn_Buscar = new System.Windows.Forms.Button();
-            this.groupBox3.SuspendLayout();
+            this.label16 = new System.Windows.Forms.Label();
+            this.txt_total = new System.Windows.Forms.TextBox();
+            this.btn_Pagar = new System.Windows.Forms.Button();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_detalle)).BeginInit();
             this.groupBox1.SuspendLayout();
+            this.groupBox3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
-            // 
-            // groupBox3
-            // 
-            this.groupBox3.Controls.Add(this.btn_Pagar);
-            this.groupBox3.Controls.Add(this.txt_total);
-            this.groupBox3.Controls.Add(this.txt_iva);
-            this.groupBox3.Controls.Add(this.txt_subtotal);
-            this.groupBox3.Controls.Add(this.label16);
-            this.groupBox3.Controls.Add(this.label15);
-            this.groupBox3.Controls.Add(this.label14);
-            this.groupBox3.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox3.Location = new System.Drawing.Point(13, 593);
-            this.groupBox3.Margin = new System.Windows.Forms.Padding(4);
-            this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Padding = new System.Windows.Forms.Padding(4);
-            this.groupBox3.Size = new System.Drawing.Size(1071, 154);
-            this.groupBox3.TabIndex = 44;
-            this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "Totales";
-            // 
-            // btn_Pagar
-            // 
-            this.btn_Pagar.Location = new System.Drawing.Point(920, 41);
-            this.btn_Pagar.Margin = new System.Windows.Forms.Padding(4);
-            this.btn_Pagar.Name = "btn_Pagar";
-            this.btn_Pagar.Size = new System.Drawing.Size(129, 76);
-            this.btn_Pagar.TabIndex = 17;
-            this.btn_Pagar.Text = "GUARDAR FACTURA";
-            this.btn_Pagar.UseVisualStyleBackColor = true;
-            this.btn_Pagar.Click += new System.EventHandler(this.btn_Pagar_Click);
-            // 
-            // txt_total
-            // 
-            this.txt_total.Enabled = false;
-            this.txt_total.Location = new System.Drawing.Point(768, 108);
-            this.txt_total.Margin = new System.Windows.Forms.Padding(4);
-            this.txt_total.Name = "txt_total";
-            this.txt_total.Size = new System.Drawing.Size(132, 28);
-            this.txt_total.TabIndex = 26;
-            // 
-            // txt_iva
-            // 
-            this.txt_iva.Enabled = false;
-            this.txt_iva.Location = new System.Drawing.Point(768, 70);
-            this.txt_iva.Margin = new System.Windows.Forms.Padding(4);
-            this.txt_iva.Name = "txt_iva";
-            this.txt_iva.Size = new System.Drawing.Size(132, 28);
-            this.txt_iva.TabIndex = 25;
-            // 
-            // txt_subtotal
-            // 
-            this.txt_subtotal.Enabled = false;
-            this.txt_subtotal.Location = new System.Drawing.Point(768, 31);
-            this.txt_subtotal.Margin = new System.Windows.Forms.Padding(4);
-            this.txt_subtotal.Name = "txt_subtotal";
-            this.txt_subtotal.Size = new System.Drawing.Size(132, 28);
-            this.txt_subtotal.TabIndex = 24;
-            // 
-            // label16
-            // 
-            this.label16.AutoSize = true;
-            this.label16.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label16.Location = new System.Drawing.Point(656, 111);
-            this.label16.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(42, 20);
-            this.label16.TabIndex = 3;
-            this.label16.Text = "Total";
-            // 
-            // label15
-            // 
-            this.label15.AutoSize = true;
-            this.label15.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label15.Location = new System.Drawing.Point(656, 70);
-            this.label15.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(36, 20);
-            this.label15.TabIndex = 2;
-            this.label15.Text = "IVA";
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.Location = new System.Drawing.Point(656, 33);
-            this.label14.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(73, 20);
-            this.label14.TabIndex = 1;
-            this.label14.Text = "Sub-Total";
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.dataGridView1);
             this.groupBox2.Controls.Add(this.dgv_detalle);
             this.groupBox2.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox2.Location = new System.Drawing.Point(13, 325);
@@ -181,7 +90,7 @@ namespace CapaVistaERP.Procesos
             // dgv_detalle
             // 
             this.dgv_detalle.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv_detalle.Location = new System.Drawing.Point(35, 43);
+            this.dgv_detalle.Location = new System.Drawing.Point(135, 44);
             this.dgv_detalle.Margin = new System.Windows.Forms.Padding(4);
             this.dgv_detalle.Name = "dgv_detalle";
             this.dgv_detalle.RowHeadersWidth = 51;
@@ -356,6 +265,20 @@ namespace CapaVistaERP.Procesos
             this.label20.TabIndex = 30;
             this.label20.Text = "Numero de factura";
             // 
+            // btn_Buscar
+            // 
+            this.btn_Buscar.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.btn_Buscar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn_Buscar.BackgroundImage")));
+            this.btn_Buscar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btn_Buscar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_Buscar.Location = new System.Drawing.Point(490, 40);
+            this.btn_Buscar.Margin = new System.Windows.Forms.Padding(4);
+            this.btn_Buscar.Name = "btn_Buscar";
+            this.btn_Buscar.Size = new System.Drawing.Size(33, 28);
+            this.btn_Buscar.TabIndex = 21;
+            this.btn_Buscar.UseVisualStyleBackColor = false;
+            this.btn_Buscar.Click += new System.EventHandler(this.btn_Buscar_Click);
+            // 
             // txt_numcoti
             // 
             this.txt_numcoti.Location = new System.Drawing.Point(286, 40);
@@ -496,51 +419,86 @@ namespace CapaVistaERP.Procesos
             this.label5.TabIndex = 4;
             this.label5.Text = "Teléfono";
             // 
-            // btn_Buscar
+            // label16
             // 
-            this.btn_Buscar.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.btn_Buscar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn_Buscar.BackgroundImage")));
-            this.btn_Buscar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btn_Buscar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_Buscar.Location = new System.Drawing.Point(490, 40);
-            this.btn_Buscar.Margin = new System.Windows.Forms.Padding(4);
-            this.btn_Buscar.Name = "btn_Buscar";
-            this.btn_Buscar.Size = new System.Drawing.Size(33, 28);
-            this.btn_Buscar.TabIndex = 21;
-            this.btn_Buscar.UseVisualStyleBackColor = false;
-            this.btn_Buscar.Click += new System.EventHandler(this.btn_Buscar_Click);
+            this.label16.AutoSize = true;
+            this.label16.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label16.Location = new System.Drawing.Point(660, 51);
+            this.label16.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(42, 20);
+            this.label16.TabIndex = 3;
+            this.label16.Text = "Total";
+            // 
+            // txt_total
+            // 
+            this.txt_total.Enabled = false;
+            this.txt_total.Location = new System.Drawing.Point(739, 47);
+            this.txt_total.Margin = new System.Windows.Forms.Padding(4);
+            this.txt_total.Name = "txt_total";
+            this.txt_total.Size = new System.Drawing.Size(132, 28);
+            this.txt_total.TabIndex = 26;
+            // 
+            // btn_Pagar
+            // 
+            this.btn_Pagar.Location = new System.Drawing.Point(920, 22);
+            this.btn_Pagar.Margin = new System.Windows.Forms.Padding(4);
+            this.btn_Pagar.Name = "btn_Pagar";
+            this.btn_Pagar.Size = new System.Drawing.Size(129, 76);
+            this.btn_Pagar.TabIndex = 17;
+            this.btn_Pagar.Text = "GUARDAR FACTURA";
+            this.btn_Pagar.UseVisualStyleBackColor = true;
+            this.btn_Pagar.Click += new System.EventHandler(this.btn_Pagar_Click);
+            // 
+            // groupBox3
+            // 
+            this.groupBox3.Controls.Add(this.btn_Pagar);
+            this.groupBox3.Controls.Add(this.txt_total);
+            this.groupBox3.Controls.Add(this.label16);
+            this.groupBox3.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox3.Location = new System.Drawing.Point(13, 593);
+            this.groupBox3.Margin = new System.Windows.Forms.Padding(4);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Padding = new System.Windows.Forms.Padding(4);
+            this.groupBox3.Size = new System.Drawing.Size(1071, 123);
+            this.groupBox3.TabIndex = 44;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "Totales";
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(19, 129);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.RowHeadersWidth = 51;
+            this.dataGridView1.Size = new System.Drawing.Size(69, 84);
+            this.dataGridView1.TabIndex = 32;
+            this.dataGridView1.Visible = false;
             // 
             // frm_factura_cobrar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1144, 796);
+            this.ClientSize = new System.Drawing.Size(1144, 760);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Name = "frm_factura_cobrar";
             this.Text = "frm_factura_cobrar";
-            this.groupBox3.ResumeLayout(false);
-            this.groupBox3.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgv_detalle)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            this.groupBox3.ResumeLayout(false);
+            this.groupBox3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
-
-        private System.Windows.Forms.GroupBox groupBox3;
-        private System.Windows.Forms.TextBox txt_total;
-        private System.Windows.Forms.TextBox txt_iva;
-        private System.Windows.Forms.TextBox txt_subtotal;
-        private System.Windows.Forms.Label label16;
-        private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.Label label14;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.Button btn_Pagar;
         private System.Windows.Forms.DataGridView dgv_detalle;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.TextBox txt_coreocl;
@@ -571,5 +529,10 @@ namespace CapaVistaERP.Procesos
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.ComboBox cmb_diaspagar;
+        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.TextBox txt_total;
+        private System.Windows.Forms.Button btn_Pagar;
+        private System.Windows.Forms.GroupBox groupBox3;
+        private System.Windows.Forms.DataGridView dataGridView1;
     }
 }

@@ -122,6 +122,34 @@ namespace CapaControladorERP
         {
             sn.ActCoti(No_Cotizacion);
         }
+        //David Carrillo 0901-20-3201
+        public DataTable ObtenerPagosPorFecha(int año, string tipoFiltro)
+        {
+            DateTime fechaPago;
+
+            if (tipoFiltro == "Diario")
+            {
+                fechaPago = DateTime.Today;
+            }
+            else if (tipoFiltro == "Semanal")
+            {
+                int numDiaSemana = (int)DateTime.Today.DayOfWeek;
+                fechaPago = DateTime.Today.AddDays(-numDiaSemana);
+            }
+            else // Mensual
+            {
+                if (año == 0)
+                {
+                    MessageBox.Show("Por favor, seleccione un año.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return null;
+                }
+
+
+                fechaPago = new DateTime(año, 1, 1);
+            }
+
+            return sn.ObtenerPagosPorFecha(fechaPago);
+        }
         //David Carrillo 0901-20-3201 
 
         public string ObtenerUltimoDato(string dato, string tabla, string dato2)
@@ -806,7 +834,11 @@ namespace CapaControladorERP
 
         }
 
+        public void InsertarTipoCambio2(DateTime fecha, string moneda, double venta, double compra)
+        {
+            sn.InsertarTipoCambio2(fecha, moneda, venta, compra);
 
+        }
         public bool EliminarTipodecambio(int idTipodeCambio)
         {
             return sn.EliminarTipodecambio(idTipodeCambio);

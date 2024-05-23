@@ -135,5 +135,10 @@ namespace CapaVistaERP.Procesos
             string rutaAyuda = @"..\..\..\..\..\..\..\Ayuda\Modulos\Ayudas\AyudasByTech.chm";
             Help.ShowHelp(this, rutaAyuda, "Facturas.html");
         }
+        private void cb_año_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
     }
 }

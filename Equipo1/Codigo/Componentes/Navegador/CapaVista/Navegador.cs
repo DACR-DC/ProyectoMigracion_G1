@@ -12,6 +12,7 @@ using Seguridad_Controlador;
 using System.Security.Cryptography;
 using System.Runtime.CompilerServices;
 using Capa_VistaConsultas;
+using Reporteador;
 
 namespace CapaVista
 {
@@ -416,6 +417,12 @@ namespace CapaVista
             Capa_VistaConsultas.Busqueda_Simple form = new Capa_VistaConsultas.Busqueda_Simple();
             form.setTable(this.tabla);
             form.Show();
+        }
+
+        private void btn_imprimir_Click(object sender, EventArgs e)
+        {
+            Reportes reporte = new Reportes();
+            reporte.Show();
         }
     }
 }

@@ -34,16 +34,15 @@ namespace CapaVistaERP.Reportes
             // 
             // crystalReportViewer2
             // 
-            this.crystalReportViewer2.ActiveViewIndex = 0;
+            this.crystalReportViewer2.ActiveViewIndex = -1;
             this.crystalReportViewer2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.crystalReportViewer2.Cursor = System.Windows.Forms.Cursors.Default;
             this.crystalReportViewer2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.crystalReportViewer2.Location = new System.Drawing.Point(0, 0);
             this.crystalReportViewer2.Name = "crystalReportViewer2";
-            this.crystalReportViewer2.ReportSource = "C:\\Users\\d_car\\OneDrive\\Documentos\\GitHub\\ProyectoMigracion\\ProyectoMigracion_G1\\Equipo1\\Reportes\\Modulos\\Bancos" +
-    "\\ReporteMovimientosDeBancos.rpt";
             this.crystalReportViewer2.Size = new System.Drawing.Size(977, 551);
             this.crystalReportViewer2.TabIndex = 0;
+            this.crystalReportViewer2.Load += new System.EventHandler(this.crystalReportViewer2_Load);
             // 
             // frmReportesDeMovimientosDeBancos
             // 

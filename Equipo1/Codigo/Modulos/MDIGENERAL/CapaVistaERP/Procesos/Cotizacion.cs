@@ -270,5 +270,20 @@ namespace CapaVistaERP.Procesos
         {
 
         }
+
+        private void btn_cancelar_Click(object sender, EventArgs e)
+        {
+            txt_cant.Text = "1";
+            txt_nombre_cl.Text = string.Empty;
+            txt_direccion_cl.Text = string.Empty;
+            txt_correo_cl.Text = string.Empty;
+            txt_telefono_cl.Text = string.Empty;
+            txt_apellido_cl.Text = string.Empty;
+            comboBox1.Text = string.Empty;
+            dataGridView1.Rows.Clear();
+            lbl_precioUni.Text= "????";
+            lbl_subTotal.Text = "????";
+            lbl_total.Text = "????";
+        }
     }
 }

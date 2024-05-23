@@ -32,6 +32,9 @@
     <PlatformTarget>AnyCPU</PlatformTarget>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="CapaVista">
+      <HintPath>..\..\Reporteador\CapaVista\bin\Debug\CapaVista.dll</HintPath>
+    </Reference>
     <Reference Include="Capa_VistaConsultas">
       <HintPath>..\..\Consultas\Capa_Vista\bin\Debug\Capa_VistaConsultas.dll</HintPath>
     </Reference>

@@ -55,6 +55,9 @@
             this.txt_numcoti = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.txt_porpagar = new System.Windows.Forms.TextBox();
+            this.label13 = new System.Windows.Forms.Label();
             this.txt_total = new System.Windows.Forms.TextBox();
             this.label16 = new System.Windows.Forms.Label();
             this.dgv_detalle = new System.Windows.Forms.DataGridView();
@@ -69,18 +72,19 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.txt_numPedido = new System.Windows.Forms.TextBox();
             this.txt_idcliente = new System.Windows.Forms.TextBox();
-            this.txt_porpagar = new System.Windows.Forms.TextBox();
-            this.label13 = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.label14 = new System.Windows.Forms.Label();
+            this.txt_estadofacxcob = new System.Windows.Forms.TextBox();
             this.cmb_tipo.SuspendLayout();
             this.groupBox2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_detalle)).BeginInit();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // cmb_tipo
             // 
+            this.cmb_tipo.Controls.Add(this.txt_estadofacxcob);
+            this.cmb_tipo.Controls.Add(this.label14);
             this.cmb_tipo.Controls.Add(this.txt_pagoExtra);
             this.cmb_tipo.Controls.Add(this.label12);
             this.cmb_tipo.Controls.Add(this.txt_aPagar);
@@ -166,6 +170,7 @@
             this.btn_cancelar.TabIndex = 54;
             this.btn_cancelar.Text = "Cancelar";
             this.btn_cancelar.UseVisualStyleBackColor = true;
+            this.btn_cancelar.Click += new System.EventHandler(this.btn_cancelar_Click);
             // 
             // txt_concepto
             // 
@@ -377,6 +382,38 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Detalle de la factura";
             // 
+            // dataGridView1
+            // 
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(22, 145);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.RowHeadersWidth = 51;
+            this.dataGridView1.Size = new System.Drawing.Size(69, 84);
+            this.dataGridView1.TabIndex = 31;
+            this.dataGridView1.Visible = false;
+            // 
+            // txt_porpagar
+            // 
+            this.txt_porpagar.Enabled = false;
+            this.txt_porpagar.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_porpagar.Location = new System.Drawing.Point(710, 243);
+            this.txt_porpagar.Margin = new System.Windows.Forms.Padding(4);
+            this.txt_porpagar.Name = "txt_porpagar";
+            this.txt_porpagar.Size = new System.Drawing.Size(198, 32);
+            this.txt_porpagar.TabIndex = 30;
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.Location = new System.Drawing.Point(493, 246);
+            this.label13.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(185, 23);
+            this.label13.TabIndex = 29;
+            this.label13.Text = "Faltante de pago";
+            // 
             // txt_total
             // 
             this.txt_total.Enabled = false;
@@ -537,37 +574,25 @@
             this.txt_idcliente.TabIndex = 65;
             this.txt_idcliente.Visible = false;
             // 
-            // txt_porpagar
+            // label14
             // 
-            this.txt_porpagar.Enabled = false;
-            this.txt_porpagar.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_porpagar.Location = new System.Drawing.Point(710, 243);
-            this.txt_porpagar.Margin = new System.Windows.Forms.Padding(4);
-            this.txt_porpagar.Name = "txt_porpagar";
-            this.txt_porpagar.Size = new System.Drawing.Size(198, 32);
-            this.txt_porpagar.TabIndex = 30;
+            this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label14.Location = new System.Drawing.Point(459, 149);
+            this.label14.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(155, 23);
+            this.label14.TabIndex = 60;
+            this.label14.Text = "Estado factura";
             // 
-            // label13
+            // txt_estadofacxcob
             // 
-            this.label13.AutoSize = true;
-            this.label13.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(493, 246);
-            this.label13.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(185, 23);
-            this.label13.TabIndex = 29;
-            this.label13.Text = "Faltante de pago";
-            // 
-            // dataGridView1
-            // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(22, 145);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.Size = new System.Drawing.Size(69, 84);
-            this.dataGridView1.TabIndex = 31;
-            this.dataGridView1.Visible = false;
+            this.txt_estadofacxcob.Location = new System.Drawing.Point(626, 146);
+            this.txt_estadofacxcob.Margin = new System.Windows.Forms.Padding(4);
+            this.txt_estadofacxcob.Name = "txt_estadofacxcob";
+            this.txt_estadofacxcob.Size = new System.Drawing.Size(161, 32);
+            this.txt_estadofacxcob.TabIndex = 61;
+            this.txt_estadofacxcob.Tag = "";
             // 
             // PagoFacturaxCobrar
             // 
@@ -583,10 +608,10 @@
             this.cmb_tipo.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_detalle)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -636,5 +661,7 @@
         private System.Windows.Forms.TextBox txt_porpagar;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.TextBox txt_estadofacxcob;
     }
 }

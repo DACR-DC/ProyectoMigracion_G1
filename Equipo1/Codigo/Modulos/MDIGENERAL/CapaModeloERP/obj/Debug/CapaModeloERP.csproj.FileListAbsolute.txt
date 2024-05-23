@@ -99,3 +99,9 @@ C:\Users\DELL\Desktop\labo analisis\holaaaaaa\Nueva carpeta\90%\ProyectoMigracio
 C:\Users\DELL\Desktop\labo analisis\holaaaaaa\Nueva carpeta\90%\ProyectoMigracion_G1\Equipo1\Codigo\Modulos\MDIGENERAL\CapaModeloERP\obj\Debug\CapaModeloERP.csproj.CoreCompileInputs.cache
 C:\Users\DELL\Desktop\labo analisis\holaaaaaa\Nueva carpeta\90%\ProyectoMigracion_G1\Equipo1\Codigo\Modulos\MDIGENERAL\CapaModeloERP\obj\Debug\CapaModeloERP.dll
 C:\Users\DELL\Desktop\labo analisis\holaaaaaa\Nueva carpeta\90%\ProyectoMigracion_G1\Equipo1\Codigo\Modulos\MDIGENERAL\CapaModeloERP\obj\Debug\CapaModeloERP.pdb
+C:\Users\DELL\Desktop\labo analisis\holaaaaaa\Nueva carpeta\cambios\Nueva carpeta\ProyectoMigracion_G1\Equipo1\Codigo\Modulos\MDIGENERAL\CapaModeloERP\bin\Debug\CapaModeloERP.dll
+C:\Users\DELL\Desktop\labo analisis\holaaaaaa\Nueva carpeta\cambios\Nueva carpeta\ProyectoMigracion_G1\Equipo1\Codigo\Modulos\MDIGENERAL\CapaModeloERP\bin\Debug\CapaModeloERP.pdb
+C:\Users\DELL\Desktop\labo analisis\holaaaaaa\Nueva carpeta\cambios\Nueva carpeta\ProyectoMigracion_G1\Equipo1\Codigo\Modulos\MDIGENERAL\CapaModeloERP\obj\Debug\CapaModeloERP.csproj.AssemblyReference.cache
+C:\Users\DELL\Desktop\labo analisis\holaaaaaa\Nueva carpeta\cambios\Nueva carpeta\ProyectoMigracion_G1\Equipo1\Codigo\Modulos\MDIGENERAL\CapaModeloERP\obj\Debug\CapaModeloERP.csproj.CoreCompileInputs.cache
+C:\Users\DELL\Desktop\labo analisis\holaaaaaa\Nueva carpeta\cambios\Nueva carpeta\ProyectoMigracion_G1\Equipo1\Codigo\Modulos\MDIGENERAL\CapaModeloERP\obj\Debug\CapaModeloERP.dll
+C:\Users\DELL\Desktop\labo analisis\holaaaaaa\Nueva carpeta\cambios\Nueva carpeta\ProyectoMigracion_G1\Equipo1\Codigo\Modulos\MDIGENERAL\CapaModeloERP\obj\Debug\CapaModeloERP.pdb
