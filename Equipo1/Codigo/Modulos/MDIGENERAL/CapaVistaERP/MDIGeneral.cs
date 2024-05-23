@@ -256,6 +256,7 @@ namespace CapaVistaERP
         {
           Abrir(new Procesos.Cotizacion());
             hideSubMenu();
+            cn.setBtitacora("8014", "Pro. Bitacora de autorizacion ordenes de compra");
         }
 
         private void button17_Click(object sender, EventArgs e)
