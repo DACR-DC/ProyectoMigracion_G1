@@ -45,6 +45,8 @@ namespace CapaVista_SisB
             this.cmb_cuentas = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.lbl_saldo = new System.Windows.Forms.Label();
+            this.lbl_code = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -237,12 +239,37 @@ namespace CapaVista_SisB
             this.lbl_saldo.TabIndex = 59;
             this.lbl_saldo.Text = "-";
             // 
+            // lbl_code
+            // 
+            this.lbl_code.AutoSize = true;
+            this.lbl_code.BackColor = System.Drawing.Color.Gainsboro;
+            this.lbl_code.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_code.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(41)))), ((int)(((byte)(57)))));
+            this.lbl_code.Location = new System.Drawing.Point(144, 280);
+            this.lbl_code.Name = "lbl_code";
+            this.lbl_code.Size = new System.Drawing.Size(0, 31);
+            this.lbl_code.TabIndex = 60;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.Color.Transparent;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(41)))), ((int)(((byte)(57)))));
+            this.label3.Location = new System.Drawing.Point(143, 252);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(105, 13);
+            this.label3.TabIndex = 61;
+            this.label3.Text = "Código seguridad";
+            // 
             // frmTransferencia
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(215)))), ((int)(((byte)(228)))), ((int)(((byte)(242)))));
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.lbl_code);
             this.Controls.Add(this.lbl_saldo);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.cmb_cuentas);
@@ -277,5 +304,7 @@ namespace CapaVista_SisB
         private System.Windows.Forms.ComboBox cmb_cuentas;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label lbl_saldo;
+        private System.Windows.Forms.Label lbl_code;
+        private System.Windows.Forms.Label label3;
     }
 }

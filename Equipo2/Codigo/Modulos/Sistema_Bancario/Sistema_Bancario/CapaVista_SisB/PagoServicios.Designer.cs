@@ -42,6 +42,8 @@ namespace CapaVista_SisB
             this.label1 = new System.Windows.Forms.Label();
             this.button3 = new System.Windows.Forms.Button();
             this.txt_comboComplemento = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.lbl_code = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -69,7 +71,7 @@ namespace CapaVista_SisB
             // 
             // txt_totalPagar
             // 
-            this.txt_totalPagar.Location = new System.Drawing.Point(162, 407);
+            this.txt_totalPagar.Location = new System.Drawing.Point(162, 516);
             this.txt_totalPagar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txt_totalPagar.Name = "txt_totalPagar";
             this.txt_totalPagar.Size = new System.Drawing.Size(283, 22);
@@ -79,7 +81,7 @@ namespace CapaVista_SisB
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(24, 407);
+            this.label7.Location = new System.Drawing.Point(24, 516);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(98, 17);
             this.label7.TabIndex = 38;
@@ -119,7 +121,7 @@ namespace CapaVista_SisB
             // 
             this.button2.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(458, 407);
+            this.button2.Location = new System.Drawing.Point(458, 516);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(171, 52);
             this.button2.TabIndex = 50;
@@ -139,7 +141,7 @@ namespace CapaVista_SisB
             // comboBoxTipoCuenta
             // 
             this.comboBoxTipoCuenta.FormattingEnabled = true;
-            this.comboBoxTipoCuenta.Location = new System.Drawing.Point(162, 438);
+            this.comboBoxTipoCuenta.Location = new System.Drawing.Point(162, 547);
             this.comboBoxTipoCuenta.Name = "comboBoxTipoCuenta";
             this.comboBoxTipoCuenta.Size = new System.Drawing.Size(283, 24);
             this.comboBoxTipoCuenta.TabIndex = 60;
@@ -148,7 +150,7 @@ namespace CapaVista_SisB
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(24, 438);
+            this.label1.Location = new System.Drawing.Point(24, 547);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(109, 17);
             this.label1.TabIndex = 61;
@@ -168,17 +170,38 @@ namespace CapaVista_SisB
             // 
             // txt_comboComplemento
             // 
-            this.txt_comboComplemento.Location = new System.Drawing.Point(139, 438);
+            this.txt_comboComplemento.Location = new System.Drawing.Point(139, 547);
             this.txt_comboComplemento.Name = "txt_comboComplemento";
             this.txt_comboComplemento.Size = new System.Drawing.Size(17, 22);
             this.txt_comboComplemento.TabIndex = 63;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(136, 428);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(145, 17);
+            this.label2.TabIndex = 64;
+            this.label2.Text = "Código de Seguridad:";
+            // 
+            // lbl_code
+            // 
+            this.lbl_code.AutoSize = true;
+            this.lbl_code.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_code.Location = new System.Drawing.Point(326, 428);
+            this.lbl_code.Name = "lbl_code";
+            this.lbl_code.Size = new System.Drawing.Size(130, 25);
+            this.lbl_code.TabIndex = 65;
+            this.lbl_code.Text = "En Espera...";
             // 
             // PagoServicios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.ClientSize = new System.Drawing.Size(650, 492);
+            this.ClientSize = new System.Drawing.Size(650, 589);
+            this.Controls.Add(this.lbl_code);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.txt_comboComplemento);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.label1);
@@ -216,5 +239,7 @@ namespace CapaVista_SisB
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.TextBox txt_comboComplemento;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label lbl_code;
     }
 }

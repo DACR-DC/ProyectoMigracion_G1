@@ -35,6 +35,7 @@ namespace CapaControlador_SisB
             return HistorySentence.getAccountInitialBalance(accountId);
         }
 
+
     }
 }
 

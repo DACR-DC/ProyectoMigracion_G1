@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -54,8 +55,25 @@ namespace CapaVista_SisB
         {
 
         }
+        public string GenerateSecureRandomNumber(int length)
+        {
+            using (RNGCryptoServiceProvider rng = new RNGCryptoServiceProvider())
+            {
+                byte[] randomNumber = new byte[length];
+                rng.GetBytes(randomNumber);
 
-        private void button2_Click(object sender, EventArgs e)
+                // Convert to a number string
+                string result = "";
+                foreach (byte b in randomNumber)
+                {
+                    result += (b % 10).ToString();
+                }
+
+                return result;
+            }
+        }
+
+        public void executeTransaction()
         {
             string numero = CuentasAmigas[cmb_amigas.SelectedIndex].numero;
             double monto = Convert.ToDouble(txt_monto.Text);
@@ -70,6 +88,16 @@ namespace CapaVista_SisB
             {
                 MessageBox.Show("Saldo insuficiente para la transaccion");
             }
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            string _code = this.GenerateSecureRandomNumber(5);
+            lbl_code.Text = _code;
+            frmCodigoSeguridad frm = new frmCodigoSeguridad();
+            frm.setRefCode(_code);
+            frm.setMethod(this.executeTransaction);
+            frm.ShowDialog();
         }
 
         private void textBox2_Enter(object sender, EventArgs e)

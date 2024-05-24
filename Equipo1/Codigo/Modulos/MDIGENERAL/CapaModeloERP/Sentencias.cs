@@ -387,7 +387,7 @@ namespace CapaModeloERP
             }
             return datos;
         }
-        //David Carrillo 0901-20-3201
+        //David Carrill o 0901-20-3201
         public DataTable ObtenerPagosPorFecha(DateTime fechaPago)
         {
             DataTable dtPagos = new DataTable();
@@ -918,6 +918,24 @@ namespace CapaModeloERP
         {
             string operador = esDeposito ? "+" : "-";
             string consulta = $"UPDATE tbl_cuentaBancaria SET saldoDisponible = saldoDisponible {operador} ? WHERE id_cuentaBancaria = ?";
+
+            using (OdbcConnection conn = con.connection())
+            {
+                using (OdbcCommand cmd = new OdbcCommand(consulta, conn))
+                {
+                    cmd.Parameters.AddWithValue("@monto", monto);
+                    cmd.Parameters.AddWithValue("@id_cuenta", idCuenta);
+
+                    int filasAfectadas = cmd.ExecuteNonQuery();
+                    return filasAfectadas > 0;
+                }
+            }
+        }
+
+        // carlos enrique modulo bancos
+        public bool ActualizarReservaCuentaBancaria(int idCuenta, double monto)
+        {
+            string consulta = "UPDATE tbl_cuentaBancaria SET reserva = reserva + ? WHERE id_cuentaBancaria = ?";
 
             using (OdbcConnection conn = con.connection())
             {
@@ -2623,6 +2641,30 @@ namespace CapaModeloERP
             }
         }
 
+        public void ActualizarExistenciasCompras(int idProducto, int cantidad)
+        {
+            using (OdbcConnection connection = con.connection())
+            {
+                if (connection != null)
+                {
+                    try
+                    {
+                        string query = "UPDATE tbl_existencias SET cantidad = cantidad + ? WHERE tbl_producto_id_producto = ?";
+
+                    using (OdbcCommand cmd = new OdbcCommand(query, connection))
+                    {
+                        cmd.Parameters.AddWithValue("@cantidad", cantidad);
+                        cmd.Parameters.AddWithValue("@idProducto", idProducto);
+
+                        //connection.Open();
+                        cmd.ExecuteNonQuery();
+                    }
+                    }catch (Exception ex){
+                        Console.WriteLine($"Error al cambiar las existencias: {ex.Message}");
+                    }
+            }
+            }
+        }
 
 
     }

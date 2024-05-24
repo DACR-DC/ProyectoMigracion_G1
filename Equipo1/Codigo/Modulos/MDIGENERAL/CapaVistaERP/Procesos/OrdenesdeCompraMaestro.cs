@@ -107,7 +107,7 @@ namespace CapaVistaERP.Procesos
                 // Obtener la primera celda de la fila seleccionada (que corresponde a la primera columna)
                 DataGridViewCell firstCell = dt_datos.SelectedRows[0].Cells[0];
                 string valorPrimeraColumna = firstCell.Value.ToString();
-                OrdendeCompraNav.RecibirDatosDesdeOrdenesCompraNav(valorPrimeraColumna);
+                OrdendeCompraNav.RecibirDatosDesdeOrdenesCompraNav(valorPrimeraColumna,true);
             }
             else
             {
@@ -140,6 +140,28 @@ namespace CapaVistaERP.Procesos
         {
             string rutaAyuda = @"..\..\..\..\..\..\..\Ayuda\Modulos\Ayudas\AyudasByTech.chm";
             Help.ShowHelp(this, rutaAyuda, "OrdenesdeCompra.html");
+        }
+
+
+        private void dt_datos_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            // Verifica que esté seleccionada una fila
+            if (dt_datos.SelectedRows.Count > 0)
+            {
+                // Obtener la primera celda de la fila seleccionada (que corresponde a la primera columna)
+                DataGridViewCell firstCell = dt_datos.SelectedRows[0].Cells[0];
+                string valorPrimeraColumna = firstCell.Value.ToString();
+                OrdendeCompraNav.RecibirDatosDesdeOrdenesCompraNav(valorPrimeraColumna,false);
+            }else
+            {
+                MessageBox.Show("Seleccione una fila y doble clic", "Selección de Orden", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+        }
+
+        private void cb_año_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+
         }
     }
 }

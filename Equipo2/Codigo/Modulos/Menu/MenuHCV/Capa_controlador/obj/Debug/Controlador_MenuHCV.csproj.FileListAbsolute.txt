@@ -105,3 +105,11 @@ C:\Users\olste\Desktop\OLIVER 2019\Tareas\Noveno Semestre\IS\Banco\ISP12k24\Equi
 C:\Users\olste\Desktop\OLIVER 2019\Tareas\Noveno Semestre\IS\Banco\ISP12k24\Equipo2\Codigo\Modulos\Menu\MenuHCV\Capa_controlador\obj\Debug\Controlador_MenuHCV.csproj.CopyComplete
 C:\Users\olste\Desktop\OLIVER 2019\Tareas\Noveno Semestre\IS\Banco\ISP12k24\Equipo2\Codigo\Modulos\Menu\MenuHCV\Capa_controlador\obj\Debug\Controlador_MenuHCV.dll
 C:\Users\olste\Desktop\OLIVER 2019\Tareas\Noveno Semestre\IS\Banco\ISP12k24\Equipo2\Codigo\Modulos\Menu\MenuHCV\Capa_controlador\obj\Debug\Controlador_MenuHCV.pdb
+C:\Users\rayju\OneDrive\Escritorio\Actualización de Sistema Bancario\ISP12k24\Equipo2\Codigo\Modulos\Menu\MenuHCV\Capa_controlador\bin\Debug\Controlador_MenuHCV.dll
+C:\Users\rayju\OneDrive\Escritorio\Actualización de Sistema Bancario\ISP12k24\Equipo2\Codigo\Modulos\Menu\MenuHCV\Capa_controlador\bin\Debug\Controlador_MenuHCV.pdb
+C:\Users\rayju\OneDrive\Escritorio\Actualización de Sistema Bancario\ISP12k24\Equipo2\Codigo\Modulos\Menu\MenuHCV\Capa_controlador\bin\Debug\eCryptography.dll
+C:\Users\rayju\OneDrive\Escritorio\Actualización de Sistema Bancario\ISP12k24\Equipo2\Codigo\Modulos\Menu\MenuHCV\Capa_controlador\obj\Debug\Controlador_MenuHCV.csproj.AssemblyReference.cache
+C:\Users\rayju\OneDrive\Escritorio\Actualización de Sistema Bancario\ISP12k24\Equipo2\Codigo\Modulos\Menu\MenuHCV\Capa_controlador\obj\Debug\Controlador_MenuHCV.csproj.CoreCompileInputs.cache
+C:\Users\rayju\OneDrive\Escritorio\Actualización de Sistema Bancario\ISP12k24\Equipo2\Codigo\Modulos\Menu\MenuHCV\Capa_controlador\obj\Debug\Controlador_MenuHCV.csproj.CopyComplete
+C:\Users\rayju\OneDrive\Escritorio\Actualización de Sistema Bancario\ISP12k24\Equipo2\Codigo\Modulos\Menu\MenuHCV\Capa_controlador\obj\Debug\Controlador_MenuHCV.dll
+C:\Users\rayju\OneDrive\Escritorio\Actualización de Sistema Bancario\ISP12k24\Equipo2\Codigo\Modulos\Menu\MenuHCV\Capa_controlador\obj\Debug\Controlador_MenuHCV.pdb

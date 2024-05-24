@@ -18,6 +18,8 @@ namespace CapaControlador_SisB
             Cuenta account = sn.getAccountByNumber(accountNo);
             TransactionSentences.updateBalanceFromAccount(account.id, amount * sign);
             HistorySentence.saveTransactionOnHistory(account.id, sign == 1 ? "Deposito" : "Retiro", amount);
+            CapaModelo_SisB.Sentencias sns = new CapaModelo_SisB.Sentencias();
+            sns.saveInBitacora(account.idUsuario, 8000, sign == 1 ? "Deposito" : "Retiro");
         }
 
         public static bool accountCanPay(int accountId, double amount)

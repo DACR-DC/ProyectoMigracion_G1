@@ -30,6 +30,8 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PagoFacturaxCobrar));
             this.cmb_tipo = new System.Windows.Forms.GroupBox();
+            this.txt_estadofacxcob = new System.Windows.Forms.TextBox();
+            this.label14 = new System.Windows.Forms.Label();
             this.txt_pagoExtra = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
             this.txt_aPagar = new System.Windows.Forms.TextBox();
@@ -72,8 +74,6 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.txt_numPedido = new System.Windows.Forms.TextBox();
             this.txt_idcliente = new System.Windows.Forms.TextBox();
-            this.label14 = new System.Windows.Forms.Label();
-            this.txt_estadofacxcob = new System.Windows.Forms.TextBox();
             this.cmb_tipo.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -110,6 +110,26 @@
             this.cmb_tipo.TabStop = false;
             this.cmb_tipo.Tag = "";
             this.cmb_tipo.Text = "Pago";
+            // 
+            // txt_estadofacxcob
+            // 
+            this.txt_estadofacxcob.Location = new System.Drawing.Point(626, 146);
+            this.txt_estadofacxcob.Margin = new System.Windows.Forms.Padding(4);
+            this.txt_estadofacxcob.Name = "txt_estadofacxcob";
+            this.txt_estadofacxcob.Size = new System.Drawing.Size(161, 32);
+            this.txt_estadofacxcob.TabIndex = 61;
+            this.txt_estadofacxcob.Tag = "";
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label14.Location = new System.Drawing.Point(459, 149);
+            this.label14.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(155, 23);
+            this.label14.TabIndex = 60;
+            this.label14.Text = "Estado factura";
             // 
             // txt_pagoExtra
             // 
@@ -574,26 +594,6 @@
             this.txt_idcliente.TabIndex = 65;
             this.txt_idcliente.Visible = false;
             // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.Location = new System.Drawing.Point(459, 149);
-            this.label14.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(155, 23);
-            this.label14.TabIndex = 60;
-            this.label14.Text = "Estado factura";
-            // 
-            // txt_estadofacxcob
-            // 
-            this.txt_estadofacxcob.Location = new System.Drawing.Point(626, 146);
-            this.txt_estadofacxcob.Margin = new System.Windows.Forms.Padding(4);
-            this.txt_estadofacxcob.Name = "txt_estadofacxcob";
-            this.txt_estadofacxcob.Size = new System.Drawing.Size(161, 32);
-            this.txt_estadofacxcob.TabIndex = 61;
-            this.txt_estadofacxcob.Tag = "";
-            // 
             // PagoFacturaxCobrar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -603,7 +603,7 @@
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.cmb_tipo);
             this.Name = "PagoFacturaxCobrar";
-            this.Text = "PagoFacturaxCobrar";
+            this.Text = "8036-PagoFacturaxCobrar";
             this.cmb_tipo.ResumeLayout(false);
             this.cmb_tipo.PerformLayout();
             this.groupBox2.ResumeLayout(false);

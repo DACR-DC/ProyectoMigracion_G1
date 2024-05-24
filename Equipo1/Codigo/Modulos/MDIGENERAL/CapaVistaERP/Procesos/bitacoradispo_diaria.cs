@@ -73,5 +73,17 @@ namespace CapaVistaERP.Procesos
         {
             this.Close();
         }
+
+        private void btn_reporte_Click(object sender, EventArgs e)
+        {
+            Reportes.frnsReporteDispoDiaria Reporte = new Reportes.frnsReporteDispoDiaria();
+            Reporte.ShowDialog();
+        }
+
+        private void btn_ayudas_Click(object sender, EventArgs e)
+        {
+            string rutaAyuda = @"..\..\..\..\..\..\..\Ayuda\Modulos\Ayudas\AyudasByTech.chm";
+            Help.ShowHelp(this, rutaAyuda, "Ayuda en el uso del proceso Disponibilidad Diaria.html");
+        }
     }
 }

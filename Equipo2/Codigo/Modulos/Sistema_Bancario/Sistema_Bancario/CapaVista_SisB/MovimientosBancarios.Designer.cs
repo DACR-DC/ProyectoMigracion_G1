@@ -32,6 +32,7 @@ namespace CapaVista_SisB
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.dgv_vistaTransacciones = new System.Windows.Forms.DataGridView();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.cmb_cuentaDebito = new System.Windows.Forms.ComboBox();
             this.txt_cuentaDebito = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.txt_cuentaCredito = new System.Windows.Forms.TextBox();
@@ -73,6 +74,7 @@ namespace CapaVista_SisB
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.cmb_cuentaDebito);
             this.groupBox1.Controls.Add(this.txt_cuentaDebito);
             this.groupBox1.Controls.Add(this.label7);
             this.groupBox1.Controls.Add(this.txt_cuentaCredito);
@@ -94,12 +96,21 @@ namespace CapaVista_SisB
             this.groupBox1.Text = "Ingresar transacciones";
             this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
+            // cmb_cuentaDebito
+            // 
+            this.cmb_cuentaDebito.FormattingEnabled = true;
+            this.cmb_cuentaDebito.Location = new System.Drawing.Point(349, 34);
+            this.cmb_cuentaDebito.Name = "cmb_cuentaDebito";
+            this.cmb_cuentaDebito.Size = new System.Drawing.Size(203, 24);
+            this.cmb_cuentaDebito.TabIndex = 94;
+            this.cmb_cuentaDebito.SelectedIndexChanged += new System.EventHandler(this.cmb_cuentaDebito_SelectedIndexChanged);
+            // 
             // txt_cuentaDebito
             // 
-            this.txt_cuentaDebito.Location = new System.Drawing.Point(349, 34);
+            this.txt_cuentaDebito.Location = new System.Drawing.Point(576, 36);
             this.txt_cuentaDebito.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txt_cuentaDebito.Name = "txt_cuentaDebito";
-            this.txt_cuentaDebito.Size = new System.Drawing.Size(203, 22);
+            this.txt_cuentaDebito.Size = new System.Drawing.Size(41, 22);
             this.txt_cuentaDebito.TabIndex = 93;
             // 
             // label7
@@ -113,7 +124,7 @@ namespace CapaVista_SisB
             // 
             // txt_cuentaCredito
             // 
-            this.txt_cuentaCredito.Location = new System.Drawing.Point(349, 68);
+            this.txt_cuentaCredito.Location = new System.Drawing.Point(349, 71);
             this.txt_cuentaCredito.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txt_cuentaCredito.Name = "txt_cuentaCredito";
             this.txt_cuentaCredito.Size = new System.Drawing.Size(203, 22);
@@ -233,5 +244,6 @@ namespace CapaVista_SisB
         private System.Windows.Forms.TextBox txt_cuentaDebito;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox txt_cuentaCredito;
+        private System.Windows.Forms.ComboBox cmb_cuentaDebito;
     }
 }

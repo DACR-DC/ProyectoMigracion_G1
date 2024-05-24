@@ -52,8 +52,11 @@
     <Compile Include="Libraries\TransactionSentences.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Provider.cs" />
+    <Compile Include="Sentences\CardSentence.cs" />
     <Compile Include="Sentences\CheckSentence.cs" />
+    <Compile Include="Sentences\ClienteSentence.cs" />
     <Compile Include="Sentences\HistorySentence.cs" />
+    <Compile Include="Sentences\InnvoiceSentences.cs" />
     <Compile Include="Templates\Check.cs" />
     <Compile Include="Sentences\CheckbookSentence.cs" />
     <Compile Include="Sentencias.cs" />
@@ -62,6 +65,7 @@
     <Compile Include="Templates\Cliente.cs" />
     <Compile Include="Templates\Cuenta.cs" />
     <Compile Include="Templates\CuentaAmiga.cs" />
+    <Compile Include="Templates\Innvoice.cs" />
     <Compile Include="Templates\Moneda.cs" />
     <Compile Include="Templates\TipoCuenta.cs" />
   </ItemGroup>

@@ -138,6 +138,28 @@ namespace CapaVistaERP.Procesos
             // MessageBox.Show("Datos actualizados");
         }
 
+        public void ActualizarReservaOrdenCompra()
+        {
+            double monto = double.Parse(txt_totalOrden.Text);
+            string estado = cb_estado.SelectedItem.ToString();
+            int idCuenta = int.Parse(txt_IDCUENTA.Text);
+
+            bool resultado = cn.ActualizarReservaOrdenCompra(idCuenta, monto, estado);
+
+            // if (resultado)
+            // {
+            //    MessageBox.Show("Reserva actualizada correctamente");
+            // }
+            // else if (estado != "Aprobado")
+            // {
+            //     MessageBox.Show("El estado no es 'Aprobado'. No se realizó ninguna actualización.");
+            // }
+            //  else
+            // {
+            //   MessageBox.Show("Error al actualizar la reserva");
+            //  }
+        }
+
         private void HabilitarControles()
         {
             cb_numeroOrden.Enabled = true;
@@ -168,7 +190,8 @@ namespace CapaVistaERP.Procesos
         private void btn_guardar_Click(object sender, EventArgs e)
         {
             GuardarDatos();
-            MessageBox.Show("Datos Guardados");
+            ActualizarReservaOrdenCompra();
+            MessageBox.Show("Datos Guardados y reserva actualizada correctamente");
         }
 
         private void btn_limpiar_Click(object sender, EventArgs e)

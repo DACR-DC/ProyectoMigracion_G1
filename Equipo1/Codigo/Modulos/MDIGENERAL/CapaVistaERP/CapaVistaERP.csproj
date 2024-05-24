@@ -43,6 +43,9 @@
     <Reference Include="CrystalDecisions.ReportSource, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
     <Reference Include="CrystalDecisions.Shared, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
     <Reference Include="CrystalDecisions.Windows.Forms, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="Modelo_Seguridad">
+      <HintPath>..\..\..\..\..\..\..\..\..\..\..\..\..\Program Files\UMG\Instalador General HSC\Modelo_Seguridad.dll</HintPath>
+    </Reference>
     <Reference Include="Seguridad_Controlador, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -305,6 +308,12 @@
     <Compile Include="Procesos\MovimientoProveedores.Designer.cs">
       <DependentUpon>MovimientoProveedores.cs</DependentUpon>
     </Compile>
+    <Compile Include="Procesos\OperacionesProvMaestro.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Procesos\OperacionesProvMaestro.Designer.cs">
+      <DependentUpon>OperacionesProvMaestro.cs</DependentUpon>
+    </Compile>
     <Compile Include="Procesos\OrdendeCompraEli.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -341,11 +350,11 @@
     <Compile Include="Procesos\Registro_pagos.Designer.cs">
       <DependentUpon>Registro_pagos.cs</DependentUpon>
     </Compile>
-    <Compile Include="Procesos\TipodecambioApi.cs">
+    <Compile Include="Procesos\TipodeCambioApi2.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Procesos\TipodecambioApi.Designer.cs">
-      <DependentUpon>TipodecambioApi.cs</DependentUpon>
+    <Compile Include="Procesos\TipodeCambioApi2.Designer.cs">
+      <DependentUpon>TipodeCambioApi2.cs</DependentUpon>
     </Compile>
     <Compile Include="Procesos\tipodecombio.cs">
       <SubType>Form</SubType>
@@ -375,6 +384,60 @@
       <AutoGen>True</AutoGen>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
       <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\frmReportesFacturasNoPagadas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\frmReportesFacturasNoPagadas.Designer.cs">
+      <DependentUpon>frmReportesFacturasNoPagadas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\frmReporteTodasLasFacturas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\frmReporteTodasLasFacturas.Designer.cs">
+      <DependentUpon>frmReporteTodasLasFacturas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\frnsReporteDispoDiaria.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\frnsReporteDispoDiaria.Designer.cs">
+      <DependentUpon>frnsReporteDispoDiaria.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\ReportedeFacturasNoPagadas.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ReportedeFacturasNoPagadas.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reportes\ReportedeFacturasPagadas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\ReportedeFacturasPagadas.Designer.cs">
+      <DependentUpon>ReportedeFacturasPagadas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\ReportedeFcaturasPagadas.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ReportedeFcaturasPagadas.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reportes\ReporteDipoDiaria.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ReporteDipoDiaria.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reportes\ReporteOperacionesProv.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ReporteOperacionesProv.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reportes\frm_reportesOperacionesProv.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\frm_reportesOperacionesProv.Designer.cs">
+      <DependentUpon>frm_reportesOperacionesProv.cs</DependentUpon>
     </Compile>
     <Compile Include="Reportes\ReportedePagos.cs">
       <AutoGen>True</AutoGen>
@@ -460,7 +523,19 @@
       <DependentUpon>Reportetipocambio.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Web References\Banguat\Reference.cs">
+    <Compile Include="Reportes\ReporteTIpoCambioAPi.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ReporteTIpoCambioAPi.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reportes\ReporteTodasFacturas.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ReporteTodasFacturas.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Web References\Banguat1\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.map</DependentUpon>
@@ -590,6 +665,9 @@
     <EmbeddedResource Include="Procesos\MovimientoProveedores.resx">
       <DependentUpon>MovimientoProveedores.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Procesos\OperacionesProvMaestro.resx">
+      <DependentUpon>OperacionesProvMaestro.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Procesos\OrdendeCompraEli.resx">
       <DependentUpon>OrdendeCompraEli.cs</DependentUpon>
     </EmbeddedResource>
@@ -608,8 +686,8 @@
     <EmbeddedResource Include="Procesos\Registro_pagos.resx">
       <DependentUpon>Registro_pagos.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Procesos\TipodecambioApi.resx">
-      <DependentUpon>TipodecambioApi.cs</DependentUpon>
+    <EmbeddedResource Include="Procesos\TipodeCambioApi2.resx">
+      <DependentUpon>TipodeCambioApi2.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Procesos\tipodecombio.resx">
       <DependentUpon>tipodecombio.cs</DependentUpon>
@@ -623,6 +701,37 @@
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\frnsReporteDispoDiaria.resx">
+      <DependentUpon>frnsReporteDispoDiaria.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\ReportedeFacturasNoPagadas.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>ReportedeFacturasNoPagadas.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\frmReportesFacturasNoPagadas.resx">
+      <DependentUpon>frmReportesFacturasNoPagadas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\ReportedeFcaturasPagadas.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>ReportedeFcaturasPagadas.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\frmReporteTodasLasFacturas.resx">
+      <DependentUpon>frmReporteTodasLasFacturas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\ReportedeFacturasPagadas.resx">
+      <DependentUpon>ReportedeFacturasPagadas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\ReporteDipoDiaria.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>ReporteDipoDiaria.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\ReporteOperacionesProv.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>ReporteOperacionesProv.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\frm_reportesOperacionesProv.resx">
+      <DependentUpon>frm_reportesOperacionesProv.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Reportes\ReportedePagos.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
@@ -673,6 +782,14 @@
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>Reportetipocambio1.cs</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\ReporteTIpoCambioAPi.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>ReporteTIpoCambioAPi.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\ReporteTodasFacturas.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>ReporteTodasFacturas.cs</LastGenOutput>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
@@ -684,17 +801,17 @@
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
     <None Include="Resources\tipo-de-cambio %282%29.png" />
-    <None Include="Web References\Banguat\DataVariable.datasource">
+    <None Include="Web References\Banguat1\DataVariable.datasource">
       <DependentUpon>Reference.map</DependentUpon>
     </None>
-    <None Include="Web References\Banguat\InfoVariable.datasource">
+    <None Include="Web References\Banguat1\InfoVariable.datasource">
       <DependentUpon>Reference.map</DependentUpon>
     </None>
-    <None Include="Web References\Banguat\Reference.map">
+    <None Include="Web References\Banguat1\Reference.map">
       <Generator>MSDiscoCodeGenerator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
-    <None Include="Web References\Banguat\TipoCambio.wsdl" />
+    <None Include="Web References\Banguat1\TipoCambio.wsdl" />
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Connected Services\" />
@@ -705,14 +822,14 @@
   <ItemGroup>
     <WebReferenceUrl Include="https://www.banguat.gob.gt/variables/ws/TipoCambio.asmx%3fWSDL">
       <UrlBehavior>Dynamic</UrlBehavior>
-      <RelPath>Web References\Banguat\</RelPath>
+      <RelPath>Web References\Banguat1\</RelPath>
       <UpdateFromURL>https://www.banguat.gob.gt/variables/ws/TipoCambio.asmx%3fWSDL</UpdateFromURL>
       <ServiceLocationURL>
       </ServiceLocationURL>
       <CachedDynamicPropName>
       </CachedDynamicPropName>
       <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
-      <CachedSettingsPropName>CapaVistaERP_Banguat_TipoCambio</CachedSettingsPropName>
+      <CachedSettingsPropName>CapaVistaERP_Banguat1_TipoCambio</CachedSettingsPropName>
     </WebReferenceUrl>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -434,6 +434,32 @@
   <metadata name="Totalfacturas.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
+  <metadata name="NoFacturas.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="FechadeVen.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="Totalfacturas.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="btn_salir.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
+        EgAACxIB0t1+/AAAAqBJREFUSEvt19mrjGEcwPGx7459S0QH5YLEhYhkCUluEMearNnpkCU7WbOElCKy
+        XtizhHChRLjxB3DrTi649f1O7/s285jhHTOSOr/6NHOeWX7P+zzPvL/fyfxv0RFzMBAtHfib0Rg9sBZv
+        cRMvcQUL0RoVDRMOxyZcwhnMi8amoDYau44atEcD/HH44UFYir04Ej3OxAKsw2LMghM5iuNwIuPQHfWR
+        OpqiA/pjA57iHLyanugMr+4dnmAZuqAXDuA5jmEq+qIN6uGX4QwHwFl/xAOMQRWMtliC26jGLphkGuJw
+        wq7Oa7zBfLhdBcMZjYdX8ip6HAWvPne5TOzS30Fu4umIw+9qBFfACT3De7g9XZF39e7RQ2zGCLicJg2j
+        IXztGj7AbXAi7RCG722BbvBcuHrbMQRJbIRf4h4tgvtZjL/fw7iAU/Czs1HovbFVeIwTGI0kZsCfxHl4
+        kHLtgQnKHXeia+AvJYl+cA9M7JLE7sODVqlxt7ETfgqXZWfAA1Wp8aJRlzj+QF3ieHwyVmJFDsvjpGAs
+        Hi8apSa2CWiOssqgUWriuXiEr/ge+FZgzMKzG32QF6UmvoyTsKL1TsHb6z6sRhIWbwv5jYD3br88HLdY
+        WKUOwoJQKNxXK9QteD+vhRVtG5I4i6u4GLDr8D4ejnvru4f9KBbWcTuUF7AvW48dkWx4r/6E01ieklcT
+        J/Zw2Ws1g1tgOWwF6+9QbMFI2K3kJf6ML5iQ/St9xIlNavc5GNbnsbARtCezGrmnw+BreYk9ge6ja781
+        JXupuygrsU88qfFgGi6ph+YQXFb3swncApfc5fa5Y75mR+M+W6+deDbsj+wIS2FfZa9t4+eSh1yNcMxD
+        5grZz5UV9k8up79Nv/B3vNKJ8F+gfxGZzA/9aATEMQRKugAAAABJRU5ErkJggg==
+</value>
+  </data>
   <data name="btn_buscar.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAgAAAAIACAYAAAD0eNT6AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
@@ -741,13 +767,4 @@
         f1Z/Zn92AMjGi170/wG9umRoSB9UIgAAAABJRU5ErkJggg==
 </value>
   </data>
-  <metadata name="NoFacturas.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="FechadeVen.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="Totalfacturas.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
 </root>

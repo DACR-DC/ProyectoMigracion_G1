@@ -24,9 +24,20 @@ namespace CapaVistaERP.Procesos
             dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
         }
         string emp = "tbl_movimientodebancos";
+        string sql = "SELECT mb.id_movimientoBanco AS ID, " +
+         "cm.concepto_movimientoBanco AS Concepto, " +
+         "cb.nombre_empresa AS Cuenta, " +
+         "mb.fecha_movimientoBanco AS Fecha, " +
+         "mb.monto_movimientoBanco AS Monto, " +
+         "mb.efecto_movimientoBanco AS Efecto, " +
+         "mb.tipo_movimientoBanco AS Codigo_movimiento, " +
+         "mb.cuenta_movimientoBanco AS Codigo_de_cuenta " +
+         "FROM " + "tbl_movimientodebancos" + " mb " + // Agregamos un espacio después de tabla
+         "INNER JOIN tbl_conceptoMovimientoDeBancos cm ON mb.tipo_movimientoBanco = cm.id_conceptoMovimiento " +
+         "INNER JOIN tbl_cuentaBancaria cb ON mb.cuenta_movimientoBanco = cb.id_cuentaBancaria";
         public void actualizardatagriew()
         {
-            DataTable dt = cn.llenartablabitacoraMB(emp);
+            DataTable dt = cn.llenartablabitacoraMB(sql);
             dataGridView1.DataSource = dt;
 
         }

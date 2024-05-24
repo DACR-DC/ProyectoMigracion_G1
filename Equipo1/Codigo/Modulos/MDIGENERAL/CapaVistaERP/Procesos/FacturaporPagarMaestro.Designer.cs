@@ -56,6 +56,7 @@ namespace CapaVistaERP.Procesos
             this.dt_datos.RowTemplate.Height = 24;
             this.dt_datos.Size = new System.Drawing.Size(1057, 372);
             this.dt_datos.TabIndex = 13;
+            this.dt_datos.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dt_datos_CellDoubleClick);
             // 
             // panel1
             // 
@@ -223,7 +224,7 @@ namespace CapaVistaERP.Procesos
             this.label2.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(17, 132);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(38, 17);
+            this.label2.Size = new System.Drawing.Size(40, 19);
             this.label2.TabIndex = 16;
             this.label2.Text = "Año:";
             // 
@@ -247,7 +248,7 @@ namespace CapaVistaERP.Procesos
             this.label1.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(202, 129);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(72, 17);
+            this.label1.Size = new System.Drawing.Size(76, 19);
             this.label1.TabIndex = 14;
             this.label1.Text = "Filtrar por:";
             // 

@@ -75,6 +75,8 @@ namespace CapaVistaERP.Procesos
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.data_products = new System.Windows.Forms.DataGridView();
             this.data_cotizaciones = new System.Windows.Forms.DataGridView();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
             this.groupBox3.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.data_products)).BeginInit();
@@ -138,9 +140,9 @@ namespace CapaVistaERP.Procesos
             this.label3.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(20, 173);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(189, 22);
+            this.label3.Size = new System.Drawing.Size(184, 22);
             this.label3.TabIndex = 121;
-            this.label3.Text = "Apellido_Vendedor";
+            this.label3.Text = "Apellido Vendedor";
             // 
             // txt_telefono_vendedor
             // 
@@ -217,9 +219,9 @@ namespace CapaVistaERP.Procesos
             this.label14.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label14.Location = new System.Drawing.Point(20, 124);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(189, 22);
+            this.label14.Size = new System.Drawing.Size(184, 22);
             this.label14.TabIndex = 92;
-            this.label14.Text = "Nombre_Vendedor";
+            this.label14.Text = "Nombre Vendedor";
             // 
             // label15
             // 
@@ -227,9 +229,9 @@ namespace CapaVistaERP.Procesos
             this.label15.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label15.Location = new System.Drawing.Point(20, 73);
             this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(134, 22);
+            this.label15.Size = new System.Drawing.Size(129, 22);
             this.label15.TabIndex = 91;
-            this.label15.Text = "ID_Vendedor";
+            this.label15.Text = "ID Vendedor";
             // 
             // txt_nombre_vendedor
             // 
@@ -469,9 +471,9 @@ namespace CapaVistaERP.Procesos
             this.label22.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label22.Location = new System.Drawing.Point(20, 194);
             this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(187, 22);
+            this.label22.Size = new System.Drawing.Size(184, 22);
             this.label22.TabIndex = 92;
-            this.label22.Text = "Nombre_Solicitante";
+            this.label22.Text = "Nombre Vendedor";
             // 
             // label23
             // 
@@ -495,7 +497,7 @@ namespace CapaVistaERP.Procesos
             // txt_nombre
             // 
             this.txt_nombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_nombre.Location = new System.Drawing.Point(36, 858);
+            this.txt_nombre.Location = new System.Drawing.Point(26, 808);
             this.txt_nombre.Name = "txt_nombre";
             this.txt_nombre.ReadOnly = true;
             this.txt_nombre.Size = new System.Drawing.Size(73, 34);
@@ -530,6 +532,7 @@ namespace CapaVistaERP.Procesos
             this.txt_venta.Size = new System.Drawing.Size(61, 34);
             this.txt_venta.TabIndex = 148;
             this.txt_venta.Tag = "";
+            this.txt_venta.TextChanged += new System.EventHandler(this.txt_venta_TextChanged);
             // 
             // textBox1
             // 
@@ -566,11 +569,33 @@ namespace CapaVistaERP.Procesos
             this.data_cotizaciones.TabIndex = 152;
             this.data_cotizaciones.Click += new System.EventHandler(this.data_cotizaciones_Click);
             // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(19, 766);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(97, 22);
+            this.label4.TabIndex = 154;
+            this.label4.Text = "Id Cliente";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(19, 877);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(92, 22);
+            this.label5.TabIndex = 155;
+            this.label5.Text = "Id Venta";
+            // 
             // frm_pedidos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1441, 1055);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.label4);
             this.Controls.Add(this.data_products);
             this.Controls.Add(this.data_cotizaciones);
             this.Controls.Add(this.textBox1);
@@ -646,5 +671,7 @@ namespace CapaVistaERP.Procesos
         private System.Windows.Forms.TextBox txt_idCliente;
         private System.Windows.Forms.DataGridView data_products;
         private System.Windows.Forms.DataGridView data_cotizaciones;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label5;
     }
 }

@@ -32,5 +32,15 @@ namespace CapaVistaERP.Properties {
                 return ((string)(this["CapaVistaERP_Banguat_TipoCambio"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.WebServiceUrl)]
+        [global::System.Configuration.DefaultSettingValueAttribute("https://www.banguat.gob.gt/variables/ws/TipoCambio.asmx")]
+        public string CapaVistaERP_Banguat1_TipoCambio {
+            get {
+                return ((string)(this["CapaVistaERP_Banguat1_TipoCambio"]));
+            }
+        }
     }
 }

@@ -8,15 +8,19 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Seguridad_Controlador;
 
+//David Alejandro Carrillo de la Roca 0901-20-3201
 namespace CapaVistaERP.Procesos
 {
     public partial class Cotizacion : Form
     {
-        Controlador cn = new Controlador();
+        private CapaControladorERP.Controlador cn;
+        public Seguridad_Controlador.Controlador ctrl_seguridad = new Seguridad_Controlador.Controlador();
         //David Carrillo 0901-20-3201
         public Cotizacion()
         {
+            cn = new CapaControladorERP.Controlador();
             InitializeComponent();
             dateTimePicker1.Format = DateTimePickerFormat.Custom;
             dateTimePicker1.CustomFormat = "yyyy-MM-dd";
@@ -246,8 +250,8 @@ namespace CapaVistaERP.Procesos
                     Console.WriteLine("Celdas vacias");
                 }
             }
-
-           // MessageBox.Show("Detalles de cotización guardados correctamente.");
+            this.ctrl_seguridad.setBtitacora("8014", "Se ingresó una cotizacion");
+            // MessageBox.Show("Detalles de cotización guardados correctamente.");
             this.Close();
             //this.Refresh();
         }
@@ -284,6 +288,12 @@ namespace CapaVistaERP.Procesos
             lbl_precioUni.Text= "????";
             lbl_subTotal.Text = "????";
             lbl_total.Text = "????";
+        }
+
+        private void btn_ayudas_Click(object sender, EventArgs e)
+        {
+            string rutaAyuda = @"..\..\..\..\..\..\..\Ayuda\Modulos\Ayudas\AyudasByTech.chm";
+            Help.ShowHelp(this, rutaAyuda, "Ventas 2.html");
         }
     }
 }

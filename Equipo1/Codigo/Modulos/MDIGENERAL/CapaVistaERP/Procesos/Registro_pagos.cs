@@ -60,7 +60,7 @@ namespace CapaVistaERP.Procesos
         private void btn_ayudas_Click_1(object sender, EventArgs e)
         {
             string rutaAyuda = @"..\..\..\..\..\..\..\Ayuda\Modulos\Ayudas\AyudasByTech.chm";
-            Help.ShowHelp(this, rutaAyuda, "Ventas 2.html");
+            Help.ShowHelp(this, rutaAyuda, "Ventas.html");
         }
 
 

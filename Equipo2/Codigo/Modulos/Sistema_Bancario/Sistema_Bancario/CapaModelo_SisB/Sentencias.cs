@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 using System.Data.Odbc;
 using System.Data;
 using CapaModelo_SisB.Templates;
-
+using System.Net;
+using System.Net.Sockets;
 
 namespace CapaModelo_SisB
 {
@@ -43,12 +44,79 @@ namespace CapaModelo_SisB
             return Campos;
         }
 
-        /// Modelo 2 //
+        public string[] llenarCmb1(string tabla, string campo1, string campo2)
+        {
+            string[] Campos = new string[300];
+            string[] auto = new string[300];
+            int i = 0;
+            string sql = "SELECT " + campo1 + "," + campo2 + " FROM tbl_cliente;";
+
+            try
+            {
+                OdbcCommand command = new OdbcCommand(sql, con.connection());
+                OdbcDataReader reader = command.ExecuteReader();
+                while (reader.Read())
+                {
+                    Campos[i] = reader.GetValue(0).ToString() + "-" + reader.GetValue(1).ToString();
+                    i++;
+                }
+            }
+            catch (Exception ex) { Console.WriteLine(ex.Message.ToString() + " \nError en asignarCombo, revise los parametros \n -" + tabla + "\n -" + campo1); }
+            return Campos;
+        }
+
+        public string[] llenarCmb2(string tabla, string campo1, string campo2)
+        {
+            string[] Campos = new string[300];
+            string[] auto = new string[300];
+            int i = 0;
+            string sql = "SELECT " + campo1 + "," + campo2 + " FROM tbl_usuarios; ";
+
+            try
+            {
+                OdbcCommand command = new OdbcCommand(sql, con.connection());
+                OdbcDataReader reader = command.ExecuteReader();
+                while (reader.Read())
+                {
+                    Campos[i] = reader.GetValue(0).ToString() + "-" + reader.GetValue(1).ToString();
+                    i++;
+                }
+            }
+            catch (Exception ex) { Console.WriteLine(ex.Message.ToString() + " \nError en asignarCombo, revise los parametros \n -" + tabla + "\n -" + campo1); }
+            return Campos;
+        }
 
         public DataTable obtener(string tabla, string campo1, string campo2, int id)
         {
 
             string sql = "SELECT " + campo1 + "," + campo2 + " FROM " + tabla + " where cue_usuario =" + id + ";";
+
+            OdbcCommand command = new OdbcCommand(sql, con.connection());
+            OdbcDataAdapter adaptador = new OdbcDataAdapter(command);
+            DataTable dt = new DataTable();
+            adaptador.Fill(dt);
+
+
+            return dt;
+        }
+        public DataTable obtener1(string tabla, string campo1, string campo2)
+        {
+
+            string sql = "SELECT " + campo1 + "," + campo2 + " FROM tbl_cliente;";
+
+            OdbcCommand command = new OdbcCommand(sql, con.connection());
+            OdbcDataAdapter adaptador = new OdbcDataAdapter(command);
+            DataTable dt = new DataTable();
+            adaptador.Fill(dt);
+
+
+            return dt;
+        }
+
+        public DataTable obtener2(string tabla, string campo1, string campo2)
+        {
+
+            string sql = "SELECT " + campo1 + "," + campo2 + " FROM tbl_usuarios; ";
 
             OdbcCommand command = new OdbcCommand(sql, con.connection());
             OdbcDataAdapter adaptador = new OdbcDataAdapter(command);
@@ -137,13 +205,13 @@ namespace CapaModelo_SisB
                     {
                         try
                         {
-                            string insertQuery = "INSERT INTO tbl_movimientosBancarios ( movban_valor_transaccion, movban_descripcion_transaccion, fk_num_cuentaDebito, fk_num_cuentaCredito, movban_status, movban_fecha_de_ingreso) VALUES (?, ?, ?, ?, ?, ?)";
+                            string insertQuery = "INSERT INTO tbl_movimientosBancarios ( movban_valor_transaccion, movban_descripcion_transaccion, fk_num_cuentaDebito, movban_num_cuentaCredito, movban_status, movban_fecha_de_ingreso) VALUES (?, ?, ?, ?, ?, ?)";
                             using (OdbcCommand cmd = new OdbcCommand(insertQuery, connection, transaction))
                             {
                                 cmd.Parameters.AddWithValue("@movban_valor_transaccion", valorMovimiento);
                                 cmd.Parameters.AddWithValue("@movban_descripcion_transaccion", descripcionMovimiento);
-                                cmd.Parameters.AddWithValue("@fk_movban_num_cuenta_debito", numCuentaDeb);
-                                cmd.Parameters.AddWithValue("@fk_movban_num_cuenta_credito", numCuentaCred);
+                                cmd.Parameters.AddWithValue("@fk_num_cuentaDebito", numCuentaDeb);
+                                cmd.Parameters.AddWithValue("@movban_num_cuentaCredito", numCuentaCred);
                                 cmd.Parameters.AddWithValue("@movban_status", estado);
                                 cmd.Parameters.AddWithValue("@movban_fecha_de_ingreso", DateTime.Now);
 
@@ -169,7 +237,7 @@ namespace CapaModelo_SisB
             {
                 if (connection != null)
                 {
-                    string sql = "SELECT pk_movban_id_transaccion, movban_valor_transaccion, movban_descripcion_transaccion, fk_num_cuentaDebito, fk_num_cuentaCredito, movban_status, movban_fecha_de_ingreso FROM  " + tabla + ";";
+                    string sql = "SELECT pk_movban_id_transaccion, movban_valor_transaccion, movban_descripcion_transaccion, fk_num_cuentaDebito, movban_num_cuentaCredito, movban_status, movban_fecha_de_ingreso FROM  " + tabla + ";";
                     OdbcDataAdapter dataTable = new OdbcDataAdapter(sql, connection);
                     DataTable table = new DataTable();
                     dataTable.Fill(table);
@@ -316,6 +384,64 @@ namespace CapaModelo_SisB
                 return reader.GetInt32(1);
             }
             return -1;
+        }
+
+        public static string GetLocalIPAddress()
+        {
+            var host = Dns.GetHostEntry(Dns.GetHostName());
+            foreach (var ip in host.AddressList)
+            {
+                if (ip.AddressFamily == AddressFamily.InterNetwork)
+                {
+                    return ip.ToString();
+                }
+            }
+            throw new Exception("No se encontró una dirección IPv4 en la red.");
+        }
+
+        public void saveInBitacora(int idUser, int idApp, string accion)
+        {
+            DateTime fechaActual = DateTime.Now;
+            DateTime horaActual = DateTime.Now;
+            string sql = "INSERT INTO tbl_bitacoradeeventos (fk_id_usuario, fk_id_aplicacion, fecha_bitacora, hora_bitacora, host_bitacora, ip_bitacora, accion_bitacora) VALUES" +
+                " ('" + idUser + "', '" + idApp + "', '" + fechaActual.ToString("yyyy-MM-dd") + "', '" + horaActual.ToString("HH:mm:ss") + "', '" + Dns.GetHostName() + "', '" + GetLocalIPAddress() + "', '" + accion + "')";
+            OdbcCommand cmd = new OdbcCommand(sql, this.con.connection());
+            cmd.ExecuteNonQuery();
+        }
+
+
+        public DataTable ObtenerCuentas()
+        {
+            using (OdbcConnection connection = this.con.connection())
+            {
+                if (connection != null)
+                {
+                    using (OdbcTransaction transaction = connection.BeginTransaction())
+                    {
+                        try
+                        {
+                            string query = "SELECT cue_id, cue_numero FROM tbl_cuenta";
+                            using (OdbcCommand cmd = new OdbcCommand(query, connection, transaction))
+                            {
+                                OdbcDataAdapter da = new OdbcDataAdapter(cmd);
+                                DataTable dt = new DataTable();
+                                da.Fill(dt);
+                                transaction.Commit();
+                                return dt;
+                            }
+                        }
+                        catch
+                        {
+                            transaction.Rollback();
+                            throw;
+                        }
+                    }
+                }
+                else
+                {
+                    throw new Exception("No se pudo establecer la conexión con la base de datos.");
+                }
+            }
         }
 
 

@@ -24,7 +24,6 @@ namespace CapaVistaERP.Procesos
             InitializeComponent();
             controller = new CapaControladorERP.Controlador();
             llenarprod();
-            controller.CargarOpcionesOrden(cmb_orden);
             cmb_igualsolicitado.Items.Add("Completa");
             cmb_igualsolicitado.Items.Add("Incompleta");
             txt_numorden.Text = idord;
@@ -70,17 +69,17 @@ namespace CapaVistaERP.Procesos
         {
             string tabla = "tbl_compras";
             string campoid = "id_EncComp";
-            txt_numcompra.Enabled = false;
+            btn_numorden.Enabled = true;
             txt_numorden.Enabled = false;
             txt_Idprov.Enabled = false;
-            btn_numorden.Enabled = false;
             txt_nombreprov.Enabled = false;
             txt_domicilio.Enabled = false;
             txt_telefonoprov.Enabled = false;
             txt_departamentos.Enabled = false;
+            txt_numcompra.Enabled = false;
             dateTimePickerEntrega.Enabled = false;
             dateTimePickerPedido.Enabled = false;
-            dateTimePickerVencimiento.Enabled = false;
+            dateTimePickerVencimiento.Enabled = true;    
             int ultimoNumeroOrden = controller.ObtenerUltimoNumeroOrden(campoid, tabla);
             txt_numcompra.Text = ultimoNumeroOrden.ToString();
         }
@@ -212,45 +211,6 @@ namespace CapaVistaERP.Procesos
                 txt_total.Text = total.ToString();
             }
         }
-
-        private void cmb_orden_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if (cmb_orden != null && cmb_orden.SelectedIndex >= 0)
-            {
-                string seleccion = cmb_orden.SelectedItem.ToString();
-
-            // Si se selecciona "Directa", deshabilitar botones para buscar proveedor
-            if (seleccion == "Directa")
-            {
-                btn_numorden.Enabled = false;
-                txt_numorden.Enabled = true;
-                txt_Idprov.Enabled = true;
-                txt_nombreprov.Enabled = true;
-                txt_domicilio.Enabled = true;
-                txt_telefonoprov.Enabled = true;
-                txt_departamentos.Enabled = true;
-                dateTimePickerEntrega.Enabled = true;
-                dateTimePickerPedido.Enabled = true;
-                dateTimePickerVencimiento.Enabled = true;
-            }
-
-            // Si se selecciona "Relacionada", deshabilitar TextBox para ingresar directamente
-            if (seleccion == "Relacionada")
-            {
-                btn_numorden.Enabled = true;
-                txt_numorden.Enabled = false;
-                txt_Idprov.Enabled = false;
-                txt_nombreprov.Enabled = false;
-                txt_domicilio.Enabled = false;
-                txt_telefonoprov.Enabled = false;
-                txt_departamentos.Enabled = false;
-                dateTimePickerEntrega.Enabled = false;
-                dateTimePickerPedido.Enabled = false;
-                dateTimePickerVencimiento.Enabled = true;
-            }
-            }
-        }
-
         private void cmb_productos_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (cmb_productos != null && cmb_productos.SelectedIndex >= 0)
@@ -349,6 +309,7 @@ namespace CapaVistaERP.Procesos
                                     if (int.TryParse(cantd, out int cantidad) && int.TryParse(idprod, out int idproducto) && double.TryParse(totfil, out double totalfila))
                                     {
                                         controller.InsertarDetalleCompra(ultimoNumeroCompra, cantidad, totalfila, idproducto, codigo);
+                                        controller.ActualizarExistenciasCompras(idproducto, cantidad);
                                     }
                                 }
                             }
@@ -385,7 +346,6 @@ namespace CapaVistaERP.Procesos
             txt_iva.Clear();
             txt_total.Clear();
             txt_notas.Clear();
-            cmb_orden.SelectedIndex = -1;
             cmb_productos.SelectedIndex = -1;
             dgv_detalle.Rows.Clear();
             txt_numcompra.Enabled = false;

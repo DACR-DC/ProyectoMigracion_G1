@@ -22,7 +22,6 @@ namespace CapaVistaERP.Procesos
             InitializeComponent();
             controller = new CapaControladorERP.Controlador();
             llenarprod();
-            controller.CargarOpcionesOrden(cmb_orden);
             iniciarcombodepartamento();
             txt_idProv.Text = id;
             txt_nombreProv.Text = nombre;
@@ -68,54 +67,19 @@ namespace CapaVistaERP.Procesos
             cmb_productos.AutoCompleteSource = AutoCompleteSource.CustomSource;
         }
 
-        //Condicionales para la selección del combo Orden
-        private void cmb_orden_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if (cmb_orden != null && cmb_orden.SelectedIndex >= 0)
-            {
-            string seleccion = cmb_orden.SelectedItem.ToString();
-
-            // Si se selecciona "Directa", deshabilitar botones para buscar proveedor
-            if (seleccion == "Directa")
-            {
-               btn_buscarProveedor.Enabled = false;
-               txt_idProv.Enabled = true;
-               btn_buscarProveedor.Enabled = false;
-               txt_nombreProv.Enabled = true;
-               txt_domicilioProv.Enabled = true;
-               txt_telefonoProv.Enabled = true;
-               cmb_deptosolicitante.Enabled = true;
-               dateTimePickerEntrega.Enabled = true;
-               dateTimePickerPedido.Enabled = true;
-             }
-
-            // Si se selecciona "Relacionada", deshabilitar TextBox para ingresar directamente
-            if (seleccion == "Relacionada")
-            {
-               btn_buscarProveedor.Enabled = true;
-               txt_idProv.Enabled = false;
-               txt_nombreProv.Enabled = false;
-               txt_telefonoProv.Enabled = false;
-               txt_domicilioProv.Enabled = false;
-               cmb_deptosolicitante.Enabled = true;
-               dateTimePickerEntrega.Enabled = true;
-               dateTimePickerPedido.Enabled = true;
-                }
-            }
-        }
         private void OrdenesdeCompra_Load(object sender, EventArgs e)
         {
             string tabla = "tbl_ordenescompra";
             string campoid = "id_OrdComp";
-            txt_numeroorden.Enabled = false;
+            btn_buscarProveedor.Enabled = true;
             txt_idProv.Enabled = false;
-            btn_buscarProveedor.Enabled = false;
             txt_nombreProv.Enabled = false;
-            txt_domicilioProv.Enabled = false;
             txt_telefonoProv.Enabled = false;
-            cmb_deptosolicitante.Enabled = false;
-            dateTimePickerEntrega.Enabled = false;
-            dateTimePickerPedido.Enabled = false;
+            txt_domicilioProv.Enabled = false;
+            cmb_deptosolicitante.Enabled = true;
+            dateTimePickerEntrega.Enabled = true;
+            dateTimePickerPedido.Enabled = true;
+            txt_numeroorden.Enabled = false;
             int ultimoNumeroOrden = controller.ObtenerUltimoNumeroOrden(campoid, tabla);
             txt_numeroorden.Text = ultimoNumeroOrden.ToString();
         }
@@ -363,7 +327,6 @@ namespace CapaVistaERP.Procesos
             txt_iva.Clear();
             txt_total.Clear();
             txt_nota.Clear();
-            cmb_orden.SelectedIndex = -1;
             cmb_productos.SelectedIndex = -1;
             dgv_detalle.Rows.Clear();
             txt_numeroorden.Enabled = false;
@@ -424,5 +387,9 @@ namespace CapaVistaERP.Procesos
             }
         }
 
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
+        }
     }
 }

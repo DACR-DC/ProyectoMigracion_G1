@@ -8,16 +8,18 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using CapaControladorERP;
-
+using Seguridad_Controlador;
 
 namespace CapaVistaERP.Procesos
 {
-
+    //David Alejandro Carrillo de la Roca 0901-20-3201
     public partial class PagoFacturaxCobrar : Form
     {
-        Controlador cn = new Controlador();
+        private CapaControladorERP.Controlador cn;
+        public Seguridad_Controlador.Controlador ctrl_seguridad = new Seguridad_Controlador.Controlador();
         public PagoFacturaxCobrar()
         {
+            cn = new CapaControladorERP.Controlador();
             InitializeComponent();
             dt_fechaPago.Format = DateTimePickerFormat.Custom;
             dt_fechaPago.CustomFormat = "dd/MM/yyy";
@@ -266,23 +268,10 @@ namespace CapaVistaERP.Procesos
 
                 if (porPagar >= 0)
                 {
-
-                    foreach (DataGridViewRow row in dataGridView1.Rows)
-                    {
-                        if (!row.IsNewRow) 
-                        {
-                            int idProducto = Convert.ToInt32(row.Cells["tbl_producto_cod_producto"].Value);
-                            int cantidad = Convert.ToInt32(row.Cells["cantidad_coti"].Value);
-
-                            cn.ActualizarExistencias(idProducto, cantidad);
-
-                        }
-                    }
-
                     cn.InsertarPagoFacXCobrar(noFactura, cliente, banco, concepto, monto_pago, extra_pago, fecha_pago, NIT, num_recibo);
                     porPagar = cn.CalcularPorPagar(noFactura);
                     cn.ActualizarFaltantePago(noFactura, porPagar);
-
+                    this.ctrl_seguridad.setBtitacora("8036", "Se hizo un pago de factura por cobrar");
                     MessageBox.Show($"Pago registrado con éxito. Monto pendiente por pagar: {porPagar}");
 
                     int idcoti;
@@ -311,23 +300,15 @@ namespace CapaVistaERP.Procesos
             }
             else
             {
-
-                double totalMontoPago = 0.0;
-
                 foreach (DataGridViewRow row in dataGridView1.Rows)
                 {
-                    if (!row.IsNewRow) // Saltar la fila nueva si existe
+                    if (!row.IsNewRow) 
                     {
-                        int idProducto = Convert.ToInt32(row.Cells["tbl_producto_cod_producto"].Value);
-                        int cantidad = Convert.ToInt32(row.Cells["cantidad_coti"].Value);
+                        int idProducto = Convert.ToInt32(row.Cells["CodProducto"].Value);
+                        int cantidad = Convert.ToInt32(row.Cells["Cantidad"].Value);
                         cn.ActualizarExistencias(idProducto, cantidad);
                     }
                 }
-
-                // Restar el total del monto a pagar
-                monto_pago -= totalMontoPago;
-
-                // Insertar el pago y actualizar el saldo pendiente
                 cn.InsertarPagoFacXCobrar(noFactura, cliente, banco, concepto, monto_pago, extra_pago, fecha_pago, NIT, num_recibo);
                 double porPagar = cn.CalcularPorPagar(noFactura);
                 cn.ActualizarFaltantePago(noFactura, porPagar);

@@ -3,6 +3,7 @@ Compatibility=1.1 or later
 Compiled file=AyudasByTech.chm
 Contents file=ayudasByTech.hhc
 Default Window=AyudaByTech
+Default topic=AutorizacionesCompra.html
 Display compile progress=No
 Language=0x100a Español (Guatemala)
 
@@ -20,6 +21,7 @@ Logistica.html
 OrdenesdeCompra.html
 Ventas 2.html
 Ventas.html
+OperacionesProveedores.html
 
 [INFOTYPES]
 

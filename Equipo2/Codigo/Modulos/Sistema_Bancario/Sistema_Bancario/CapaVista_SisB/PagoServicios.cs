@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Data.Odbc;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Windows.Forms;
 using CapaModelo_SisB;
 using Seguridad_Controlador;
@@ -54,12 +55,28 @@ namespace CapaVista_SisB
             }
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        public string GenerateSecureRandomNumber(int length)
         {
-            // FUNCIONES PARA EL BOTON PAGAR
+            using (RNGCryptoServiceProvider rng = new RNGCryptoServiceProvider())
+            {
+                byte[] randomNumber = new byte[length];
+                rng.GetBytes(randomNumber);
+
+                // Convert to a number string
+                string result = "";
+                foreach (byte b in randomNumber)
+                {
+                    result += (b % 10).ToString();
+                }
+
+                return result;
+            }
+        }
+
+        public void executeTransaction()
+        {
             try
             {
-                // No necesitamos CalcularTotal aquí, ya que se hace en button3_Click
 
                 string accountNit = txt_noCliente.Text;
                 double amountToPay = ObtenerMontoAPagar();
@@ -98,6 +115,18 @@ namespace CapaVista_SisB
             {
                 MessageBox.Show("Error al procesar el pago: " + ex.Message);
             }
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            // FUNCIONES PARA EL BOTON PAGAR
+            // Llamar a Códigos de Seguridad
+            string _code = this.GenerateSecureRandomNumber(5);
+            lbl_code.Text = _code;
+            frmCodigoSeguridad frm = new frmCodigoSeguridad();
+            frm.setRefCode(_code);
+            frm.setMethod(this.executeTransaction);
+            frm.ShowDialog();
         }
 
         private void button3_Click(object sender, EventArgs e)

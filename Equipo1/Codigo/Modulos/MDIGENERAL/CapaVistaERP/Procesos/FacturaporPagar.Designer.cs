@@ -41,28 +41,13 @@ namespace CapaVistaERP.Procesos
             this.label15 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.cmb_productos = new System.Windows.Forms.ComboBox();
-            this.label19 = new System.Windows.Forms.Label();
-            this.txt_totalfila = new System.Windows.Forms.TextBox();
-            this.txt_preciou = new System.Windows.Forms.TextBox();
-            this.txt_descripcion = new System.Windows.Forms.TextBox();
-            this.txt_cantidad = new System.Windows.Forms.TextBox();
-            this.label10 = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
-            this.btn_confirmar = new System.Windows.Forms.Button();
-            this.btn_eliminar = new System.Windows.Forms.Button();
-            this.btn_agregar = new System.Windows.Forms.Button();
             this.dgv_detalle = new System.Windows.Forms.DataGridView();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.txt_nitprov = new System.Windows.Forms.TextBox();
             this.label21 = new System.Windows.Forms.Label();
             this.txt_numfactura = new System.Windows.Forms.TextBox();
             this.label20 = new System.Windows.Forms.Label();
-            this.label17 = new System.Windows.Forms.Label();
             this.btn_numorden = new System.Windows.Forms.Button();
-            this.cmb_orden = new System.Windows.Forms.ComboBox();
             this.txt_numcompra = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
@@ -95,7 +80,7 @@ namespace CapaVistaERP.Procesos
             this.groupBox3.Controls.Add(this.label15);
             this.groupBox3.Controls.Add(this.label14);
             this.groupBox3.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox3.Location = new System.Drawing.Point(13, 664);
+            this.groupBox3.Location = new System.Drawing.Point(13, 579);
             this.groupBox3.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Padding = new System.Windows.Forms.Padding(4);
@@ -198,177 +183,25 @@ namespace CapaVistaERP.Procesos
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.cmb_productos);
-            this.groupBox2.Controls.Add(this.label19);
-            this.groupBox2.Controls.Add(this.txt_totalfila);
-            this.groupBox2.Controls.Add(this.txt_preciou);
-            this.groupBox2.Controls.Add(this.txt_descripcion);
-            this.groupBox2.Controls.Add(this.txt_cantidad);
-            this.groupBox2.Controls.Add(this.label10);
-            this.groupBox2.Controls.Add(this.label13);
-            this.groupBox2.Controls.Add(this.label11);
-            this.groupBox2.Controls.Add(this.label12);
-            this.groupBox2.Controls.Add(this.btn_confirmar);
-            this.groupBox2.Controls.Add(this.btn_eliminar);
-            this.groupBox2.Controls.Add(this.btn_agregar);
             this.groupBox2.Controls.Add(this.dgv_detalle);
             this.groupBox2.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox2.Location = new System.Drawing.Point(13, 335);
             this.groupBox2.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Padding = new System.Windows.Forms.Padding(4);
-            this.groupBox2.Size = new System.Drawing.Size(1071, 321);
+            this.groupBox2.Size = new System.Drawing.Size(1071, 236);
             this.groupBox2.TabIndex = 40;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Descripción de la factura";
             // 
-            // cmb_productos
-            // 
-            this.cmb_productos.FormattingEnabled = true;
-            this.cmb_productos.Location = new System.Drawing.Point(102, 71);
-            this.cmb_productos.Margin = new System.Windows.Forms.Padding(4);
-            this.cmb_productos.Name = "cmb_productos";
-            this.cmb_productos.Size = new System.Drawing.Size(160, 27);
-            this.cmb_productos.TabIndex = 49;
-            this.cmb_productos.SelectedIndexChanged += new System.EventHandler(this.cmb_productos_SelectedIndexChanged);
-            // 
-            // label19
-            // 
-            this.label19.AutoSize = true;
-            this.label19.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label19.Location = new System.Drawing.Point(139, 40);
-            this.label19.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(68, 20);
-            this.label19.TabIndex = 48;
-            this.label19.Text = "Nombre";
-            // 
-            // txt_totalfila
-            // 
-            this.txt_totalfila.Enabled = false;
-            this.txt_totalfila.Location = new System.Drawing.Point(654, 72);
-            this.txt_totalfila.Margin = new System.Windows.Forms.Padding(4);
-            this.txt_totalfila.Name = "txt_totalfila";
-            this.txt_totalfila.Size = new System.Drawing.Size(132, 24);
-            this.txt_totalfila.TabIndex = 47;
-            // 
-            // txt_preciou
-            // 
-            this.txt_preciou.Enabled = false;
-            this.txt_preciou.Location = new System.Drawing.Point(535, 72);
-            this.txt_preciou.Margin = new System.Windows.Forms.Padding(4);
-            this.txt_preciou.Name = "txt_preciou";
-            this.txt_preciou.Size = new System.Drawing.Size(96, 24);
-            this.txt_preciou.TabIndex = 46;
-            // 
-            // txt_descripcion
-            // 
-            this.txt_descripcion.Enabled = false;
-            this.txt_descripcion.Location = new System.Drawing.Point(271, 72);
-            this.txt_descripcion.Margin = new System.Windows.Forms.Padding(4);
-            this.txt_descripcion.Name = "txt_descripcion";
-            this.txt_descripcion.Size = new System.Drawing.Size(247, 24);
-            this.txt_descripcion.TabIndex = 45;
-            // 
-            // txt_cantidad
-            // 
-            this.txt_cantidad.Location = new System.Drawing.Point(35, 72);
-            this.txt_cantidad.Margin = new System.Windows.Forms.Padding(4);
-            this.txt_cantidad.Name = "txt_cantidad";
-            this.txt_cantidad.Size = new System.Drawing.Size(56, 24);
-            this.txt_cantidad.TabIndex = 44;
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(31, 40);
-            this.label10.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(49, 20);
-            this.label10.TabIndex = 40;
-            this.label10.Text = "Cant.";
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(699, 44);
-            this.label13.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(42, 20);
-            this.label13.TabIndex = 43;
-            this.label13.Text = "Total";
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(327, 44);
-            this.label11.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(96, 20);
-            this.label11.TabIndex = 41;
-            this.label11.Text = "Descripción";
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(562, 44);
-            this.label12.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(36, 20);
-            this.label12.TabIndex = 42;
-            this.label12.Text = "P/U";
-            // 
-            // btn_confirmar
-            // 
-            this.btn_confirmar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(45)))), ((int)(((byte)(113)))));
-            this.btn_confirmar.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btn_confirmar.Location = new System.Drawing.Point(934, 235);
-            this.btn_confirmar.Margin = new System.Windows.Forms.Padding(4);
-            this.btn_confirmar.Name = "btn_confirmar";
-            this.btn_confirmar.Size = new System.Drawing.Size(99, 39);
-            this.btn_confirmar.TabIndex = 19;
-            this.btn_confirmar.Text = "Confirmar";
-            this.btn_confirmar.UseVisualStyleBackColor = false;
-            this.btn_confirmar.Click += new System.EventHandler(this.btn_confirmar_Click);
-            // 
-            // btn_eliminar
-            // 
-            this.btn_eliminar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(45)))), ((int)(((byte)(113)))));
-            this.btn_eliminar.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btn_eliminar.Location = new System.Drawing.Point(934, 177);
-            this.btn_eliminar.Margin = new System.Windows.Forms.Padding(4);
-            this.btn_eliminar.Name = "btn_eliminar";
-            this.btn_eliminar.Size = new System.Drawing.Size(99, 39);
-            this.btn_eliminar.TabIndex = 18;
-            this.btn_eliminar.Text = "Eliminar";
-            this.btn_eliminar.UseVisualStyleBackColor = false;
-            this.btn_eliminar.Click += new System.EventHandler(this.btn_eliminar_Click);
-            // 
-            // btn_agregar
-            // 
-            this.btn_agregar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(45)))), ((int)(((byte)(113)))));
-            this.btn_agregar.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btn_agregar.Location = new System.Drawing.Point(934, 120);
-            this.btn_agregar.Margin = new System.Windows.Forms.Padding(4);
-            this.btn_agregar.Name = "btn_agregar";
-            this.btn_agregar.Size = new System.Drawing.Size(99, 39);
-            this.btn_agregar.TabIndex = 17;
-            this.btn_agregar.Text = "Agregar";
-            this.btn_agregar.UseVisualStyleBackColor = false;
-            this.btn_agregar.Click += new System.EventHandler(this.btn_agregar_Click);
-            // 
             // dgv_detalle
             // 
             this.dgv_detalle.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv_detalle.Location = new System.Drawing.Point(35, 109);
+            this.dgv_detalle.Location = new System.Drawing.Point(35, 25);
             this.dgv_detalle.Margin = new System.Windows.Forms.Padding(4);
             this.dgv_detalle.Name = "dgv_detalle";
             this.dgv_detalle.RowHeadersWidth = 51;
-            this.dgv_detalle.Size = new System.Drawing.Size(865, 185);
+            this.dgv_detalle.Size = new System.Drawing.Size(998, 185);
             this.dgv_detalle.TabIndex = 8;
             // 
             // groupBox1
@@ -377,9 +210,7 @@ namespace CapaVistaERP.Procesos
             this.groupBox1.Controls.Add(this.label21);
             this.groupBox1.Controls.Add(this.txt_numfactura);
             this.groupBox1.Controls.Add(this.label20);
-            this.groupBox1.Controls.Add(this.label17);
             this.groupBox1.Controls.Add(this.btn_numorden);
-            this.groupBox1.Controls.Add(this.cmb_orden);
             this.groupBox1.Controls.Add(this.txt_numcompra);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.label9);
@@ -425,33 +256,22 @@ namespace CapaVistaERP.Procesos
             // 
             // txt_numfactura
             // 
-            this.txt_numfactura.Location = new System.Drawing.Point(727, 38);
+            this.txt_numfactura.Location = new System.Drawing.Point(299, 47);
             this.txt_numfactura.Margin = new System.Windows.Forms.Padding(4);
             this.txt_numfactura.Name = "txt_numfactura";
-            this.txt_numfactura.Size = new System.Drawing.Size(132, 24);
+            this.txt_numfactura.Size = new System.Drawing.Size(238, 24);
             this.txt_numfactura.TabIndex = 31;
             // 
             // label20
             // 
             this.label20.AutoSize = true;
             this.label20.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label20.Location = new System.Drawing.Point(553, 38);
+            this.label20.Location = new System.Drawing.Point(140, 47);
             this.label20.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label20.Name = "label20";
             this.label20.Size = new System.Drawing.Size(149, 20);
             this.label20.TabIndex = 30;
             this.label20.Text = "Numero de factura";
-            // 
-            // label17
-            // 
-            this.label17.AutoSize = true;
-            this.label17.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label17.Location = new System.Drawing.Point(140, 41);
-            this.label17.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(56, 20);
-            this.label17.TabIndex = 29;
-            this.label17.Text = "Órden";
             // 
             // btn_numorden
             // 
@@ -466,16 +286,6 @@ namespace CapaVistaERP.Procesos
             this.btn_numorden.TabIndex = 21;
             this.btn_numorden.UseVisualStyleBackColor = false;
             this.btn_numorden.Click += new System.EventHandler(this.btn_numorden_Click);
-            // 
-            // cmb_orden
-            // 
-            this.cmb_orden.FormattingEnabled = true;
-            this.cmb_orden.Location = new System.Drawing.Point(297, 36);
-            this.cmb_orden.Margin = new System.Windows.Forms.Padding(4);
-            this.cmb_orden.Name = "cmb_orden";
-            this.cmb_orden.Size = new System.Drawing.Size(239, 27);
-            this.cmb_orden.TabIndex = 28;
-            this.cmb_orden.SelectedIndexChanged += new System.EventHandler(this.cmb_orden_SelectedIndexChanged);
             // 
             // txt_numcompra
             // 
@@ -617,7 +427,7 @@ namespace CapaVistaERP.Procesos
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
-            this.ClientSize = new System.Drawing.Size(1134, 824);
+            this.ClientSize = new System.Drawing.Size(1134, 753);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
@@ -627,7 +437,6 @@ namespace CapaVistaERP.Procesos
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
             this.groupBox2.ResumeLayout(false);
-            this.groupBox2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_detalle)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
@@ -654,9 +463,7 @@ namespace CapaVistaERP.Procesos
         private System.Windows.Forms.Label label21;
         private System.Windows.Forms.TextBox txt_numfactura;
         private System.Windows.Forms.Label label20;
-        private System.Windows.Forms.Label label17;
         private System.Windows.Forms.Button btn_numorden;
-        private System.Windows.Forms.ComboBox cmb_orden;
         private System.Windows.Forms.TextBox txt_numcompra;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label9;
@@ -671,18 +478,5 @@ namespace CapaVistaERP.Procesos
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox txt_telefonoprov;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Button btn_confirmar;
-        private System.Windows.Forms.Button btn_eliminar;
-        private System.Windows.Forms.Button btn_agregar;
-        private System.Windows.Forms.ComboBox cmb_productos;
-        private System.Windows.Forms.Label label19;
-        private System.Windows.Forms.TextBox txt_totalfila;
-        private System.Windows.Forms.TextBox txt_preciou;
-        private System.Windows.Forms.TextBox txt_descripcion;
-        private System.Windows.Forms.TextBox txt_cantidad;
-        private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.Label label12;
     }
 }

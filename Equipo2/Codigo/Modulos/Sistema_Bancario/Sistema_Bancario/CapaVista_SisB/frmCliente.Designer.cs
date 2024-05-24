@@ -45,6 +45,8 @@ namespace CapaVista_SisB
             this.textBox6 = new System.Windows.Forms.TextBox();
             this.textBox7 = new System.Windows.Forms.TextBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.textBox8 = new System.Windows.Forms.TextBox();
+            this.label8 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -190,12 +192,32 @@ namespace CapaVista_SisB
             this.dataGridView1.TabIndex = 23;
             this.dataGridView1.Tag = "tbl_cliente";
             // 
+            // textBox8
+            // 
+            this.textBox8.Location = new System.Drawing.Point(616, 190);
+            this.textBox8.Name = "textBox8";
+            this.textBox8.Size = new System.Drawing.Size(156, 20);
+            this.textBox8.TabIndex = 24;
+            this.textBox8.Tag = "cli_nit";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(588, 193);
+            this.label8.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(23, 13);
+            this.label8.TabIndex = 25;
+            this.label8.Text = "Nit:";
+            // 
             // frmCliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.label8);
+            this.Controls.Add(this.textBox8);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.textBox7);
             this.Controls.Add(this.textBox6);
@@ -238,5 +260,7 @@ namespace CapaVista_SisB
         private System.Windows.Forms.TextBox textBox6;
         private System.Windows.Forms.TextBox textBox7;
         private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.TextBox textBox8;
+        private System.Windows.Forms.Label label8;
     }
 }

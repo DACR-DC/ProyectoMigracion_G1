@@ -11,16 +11,21 @@ using CapaControlador_SisB;
 using Seguridad_Controlador;
 using CapaModelo_SisB.Libraries;
 using CapaModelo_SisB.Templates;
+using System.IO;
 
 namespace CapaVista_SisB
 {
     public partial class frmDeposito : Form
     {
         CapaControlador_SisB.Controlador ctrl = new CapaControlador_SisB.Controlador();
+        double monto = 0;
         public frmDeposito()
         {
             InitializeComponent();
         }
+
+
+
 
         public void fillCmb()
         {
@@ -50,10 +55,17 @@ namespace CapaVista_SisB
             if (result)
             {
                 MessageBox.Show("Desposito realizado");
+                monto = Convert.ToDouble(textBox1.Text);
                 return;
             }
             MessageBox.Show("Cuenta no encontrada, intente de nuevo");
         }
+
+        private void button2_Click_1(object sender, EventArgs e)
+        {
+            DocumentController.makeTransactionDocument(txt_cuenta.Text, textBox1.Text);
+        }
+
+
     }
 }
-   

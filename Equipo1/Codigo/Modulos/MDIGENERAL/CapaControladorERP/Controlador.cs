@@ -214,6 +214,15 @@ namespace CapaControladorERP
 
         }
 
+        // carlos enrique modulo bancos
+        public bool ActualizarReservaOrdenCompra(int idCuenta, double monto, string estado)
+        {
+            if (estado == "Aprobado")
+            {
+                return sn.ActualizarReservaCuentaBancaria(idCuenta, monto);
+            }
+            return false;
+        }
 
         // carlos enrique modulo bancos
         public DataTable Buscar(string tabla, string columna, string dato)
@@ -842,6 +851,10 @@ namespace CapaControladorERP
         public bool EliminarTipodecambio(int idTipodeCambio)
         {
             return sn.EliminarTipodecambio(idTipodeCambio);
+        }
+        public void ActualizarExistenciasCompras(int idProducto, int cantidad)
+        {
+            sn.ActualizarExistenciasCompras(idProducto, cantidad);
         }
     }
 }

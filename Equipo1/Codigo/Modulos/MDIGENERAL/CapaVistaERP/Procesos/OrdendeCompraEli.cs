@@ -21,10 +21,11 @@ namespace CapaVistaERP.Procesos
             InitializeComponent();
             controller = new CapaControladorERP.Controlador();
         }
-        public void RecibirDatosDesdeOrdenesCompraNav(string id)
+        public void RecibirDatosDesdeOrdenesCompraNav(string id, bool boton)
         {
             string tabla = "tbl_ordenescompra";
-            string columna = "id_OrdComp";
+            string columna = "id_OrdComp";      
+            button4.Visible = boton;
             DataTable tablaMaestra = controller.filtrardatos(tabla, columna, id);
             MostrarDatosEnTextBox(tablaMaestra);
             this.Show();

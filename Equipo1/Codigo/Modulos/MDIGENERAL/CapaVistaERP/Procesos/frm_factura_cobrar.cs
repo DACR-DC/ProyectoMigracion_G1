@@ -9,15 +9,18 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using CapaControladorERP;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
+using Seguridad_Controlador;
 
 namespace CapaVistaERP.Procesos
 {
     //David Carrillo 0901-20-3201
     public partial class frm_factura_cobrar : Form
     {
-        Controlador cn=new Controlador();
+        private CapaControladorERP.Controlador cn;
+        public Seguridad_Controlador.Controlador ctrl_seguridad = new Seguridad_Controlador.Controlador();
         public frm_factura_cobrar()
         {
+            cn = new CapaControladorERP.Controlador();
             InitializeComponent();
             dgvFactura.Format = DateTimePickerFormat.Custom;
             dgvFactura.CustomFormat = "yyyy-MM-dd";
@@ -307,7 +310,7 @@ namespace CapaVistaERP.Procesos
             double faltante_pago = Convert.ToDouble(txt_total.Text);
 
             cn.InsertarFactura(total, limite, estado, idVenta, cl, fechaFact, faltante_pago);
-
+            this.ctrl_seguridad.setBtitacora("8016", "Se hizo guardo una factura por cobrar");
             MessageBox.Show("Factura Guardada con exito");
 
             DialogResult result = MessageBox.Show("¿Desea pagar su factura?", "Confirmación de Pago", MessageBoxButtons.YesNo, MessageBoxIcon.Question);

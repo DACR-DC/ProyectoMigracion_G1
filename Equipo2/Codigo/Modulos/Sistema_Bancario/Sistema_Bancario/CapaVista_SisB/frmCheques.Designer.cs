@@ -30,6 +30,8 @@ namespace CapaVista_SisB
         private void InitializeComponent()
         {
             this.panel2 = new System.Windows.Forms.Panel();
+            this.label4 = new System.Windows.Forms.Label();
+            this.txt_cheque2 = new System.Windows.Forms.TextBox();
             this.txt_cuenta2 = new System.Windows.Forms.TextBox();
             this.btn_cobro2 = new System.Windows.Forms.Button();
             this.txt_monto2 = new System.Windows.Forms.TextBox();
@@ -53,8 +55,6 @@ namespace CapaVista_SisB
             this.lbl_monto = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btn_check = new System.Windows.Forms.Button();
-            this.txt_cheque2 = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -74,6 +74,31 @@ namespace CapaVista_SisB
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(410, 456);
             this.panel2.TabIndex = 56;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.BackColor = System.Drawing.Color.Transparent;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.label4.Location = new System.Drawing.Point(64, 117);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(74, 13);
+            this.label4.TabIndex = 73;
+            this.label4.Text = "No. Cheque";
+            // 
+            // txt_cheque2
+            // 
+            this.txt_cheque2.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.txt_cheque2.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_cheque2.ForeColor = System.Drawing.SystemColors.ControlDark;
+            this.txt_cheque2.Location = new System.Drawing.Point(63, 146);
+            this.txt_cheque2.Multiline = true;
+            this.txt_cheque2.Name = "txt_cheque2";
+            this.txt_cheque2.Size = new System.Drawing.Size(134, 25);
+            this.txt_cheque2.TabIndex = 71;
+            this.txt_cheque2.Tag = "Cantidad_a_retirar";
+            this.txt_cheque2.Text = "31573015";
             // 
             // txt_cuenta2
             // 
@@ -356,31 +381,6 @@ namespace CapaVista_SisB
             this.btn_check.UseVisualStyleBackColor = false;
             this.btn_check.Click += new System.EventHandler(this.btn_check_Click);
             // 
-            // txt_cheque2
-            // 
-            this.txt_cheque2.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.txt_cheque2.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_cheque2.ForeColor = System.Drawing.SystemColors.ControlDark;
-            this.txt_cheque2.Location = new System.Drawing.Point(63, 146);
-            this.txt_cheque2.Multiline = true;
-            this.txt_cheque2.Name = "txt_cheque2";
-            this.txt_cheque2.Size = new System.Drawing.Size(134, 25);
-            this.txt_cheque2.TabIndex = 71;
-            this.txt_cheque2.Tag = "Cantidad_a_retirar";
-            this.txt_cheque2.Text = "31573015";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.BackColor = System.Drawing.Color.Transparent;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            this.label4.Location = new System.Drawing.Point(64, 117);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(74, 13);
-            this.label4.TabIndex = 73;
-            this.label4.Text = "No. Cheque";
-            // 
             // frmCheques
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -405,6 +405,7 @@ namespace CapaVista_SisB
             this.Controls.Add(this.btn_cobro1);
             this.Controls.Add(this.txt_cheque);
             this.Name = "frmCheques";
+            this.Tag = "GestCli_Cheques";
             this.Text = "frmCheques";
             this.Load += new System.EventHandler(this.frmCheques_Load);
             this.panel2.ResumeLayout(false);

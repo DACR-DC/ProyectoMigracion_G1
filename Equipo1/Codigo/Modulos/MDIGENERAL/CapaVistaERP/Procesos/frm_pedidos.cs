@@ -169,6 +169,11 @@ namespace CapaVistaERP.Procesos
             int Selected = Convert.ToInt32(data_cotizaciones.SelectedRows[0].Cells[0].Value);
             this.updateProductTable(Selected);
         }
+
+        private void txt_venta_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
 

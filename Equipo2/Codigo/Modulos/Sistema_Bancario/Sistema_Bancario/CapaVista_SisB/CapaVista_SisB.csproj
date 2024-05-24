@@ -32,6 +32,9 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="AxShockwaveFlashObjects, Version=1.0.0.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
+    <Reference Include="BouncyCastle.Crypto, Version=1.8.9.0, Culture=neutral, PublicKeyToken=0e99375e54769942">
+      <HintPath>..\packages\BouncyCastle.1.8.9\lib\BouncyCastle.Crypto.dll</HintPath>
+    </Reference>
     <Reference Include="CapaControlador">
       <HintPath>..\..\..\..\Componentes\Reporteador\CapaControlador\bin\Debug\CapaControlador.dll</HintPath>
     </Reference>
@@ -49,6 +52,9 @@
     <Reference Include="CrystalDecisions.ReportSource, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
     <Reference Include="CrystalDecisions.Shared, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
     <Reference Include="CrystalDecisions.Windows.Forms, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="itextsharp, Version=5.5.13.3, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>..\packages\iTextSharp.5.5.13.3\lib\itextsharp.dll</HintPath>
+    </Reference>
     <Reference Include="Navegador2.0, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\..\Componentes\Navegador2.0\Navegador2.0\bin\Debug\Navegador2.0.dll</HintPath>
@@ -82,6 +88,12 @@
     <Compile Include="frmCliente.Designer.cs">
       <DependentUpon>frmCliente.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmCodigoSeguridad.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmCodigoSeguridad.Designer.cs">
+      <DependentUpon>frmCodigoSeguridad.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmDeposito.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -106,6 +118,12 @@
     <Compile Include="frmMoneda.Designer.cs">
       <DependentUpon>frmMoneda.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmNotas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmNotas.Designer.cs">
+      <DependentUpon>frmNotas.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmRetiro.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -124,11 +142,18 @@
     <Compile Include="frmTransferencia.Designer.cs">
       <DependentUpon>frmTransferencia.cs</DependentUpon>
     </Compile>
+    <Compile Include="Helper.cs" />
     <Compile Include="Mantenimientos\FrmCuentaAmiga.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Mantenimientos\FrmCuentaAmiga.Designer.cs">
       <DependentUpon>FrmCuentaAmiga.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Mantenimientos\Tarjetas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Mantenimientos\Tarjetas.Designer.cs">
+      <DependentUpon>Tarjetas.cs</DependentUpon>
     </Compile>
     <Compile Include="MantenimientoTransaccion.cs">
       <SubType>Form</SubType>
@@ -204,6 +229,9 @@
     <EmbeddedResource Include="frmCliente.resx">
       <DependentUpon>frmCliente.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmCodigoSeguridad.resx">
+      <DependentUpon>frmCodigoSeguridad.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmDeposito.resx">
       <DependentUpon>frmDeposito.cs</DependentUpon>
     </EmbeddedResource>
@@ -216,6 +244,9 @@
     <EmbeddedResource Include="frmMoneda.resx">
       <DependentUpon>frmMoneda.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmNotas.resx">
+      <DependentUpon>frmNotas.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmRetiro.resx">
       <DependentUpon>frmRetiro.cs</DependentUpon>
     </EmbeddedResource>
@@ -227,6 +258,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Mantenimientos\FrmCuentaAmiga.resx">
       <DependentUpon>FrmCuentaAmiga.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mantenimientos\Tarjetas.resx">
+      <DependentUpon>Tarjetas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MantenimientoTransaccion.resx">
       <DependentUpon>MantenimientoTransaccion.cs</DependentUpon>
@@ -265,6 +299,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="img\qr-code.jpeg" />
+    <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\CapaModelo_SisB\CapaModelo_SisB.csproj">
@@ -281,6 +316,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="img\checkIcon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Comprobantes\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

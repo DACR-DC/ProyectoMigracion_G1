@@ -22,34 +22,23 @@ namespace CapaVistaERP.Procesos
         {
             InitializeComponent();
             controller = new CapaControladorERP.Controlador();
-            llenarprod();
-            controller.CargarOpcionesOrden(cmb_orden);
             txt_numcompra.Text = idcompra;
             dateTimePickerVencimiento.Text = fechaV;
             txt_Idprov.Text = proveedorfact;
         }
         private void FacturaporPagar_Load(object sender, EventArgs e)
         {
-            string tabla = "tbl_facturaxpagar";
-            string campoid = "NoFactura";
+            btn_numorden.Enabled = true;
             txt_numcompra.Enabled = false;
-            txt_numfactura.Enabled = false;
             txt_Idprov.Enabled = false;
-            btn_numorden.Enabled = false;
             txt_nombreprov.Enabled = false;
             txt_domicilio.Enabled = false;
             txt_telefonoprov.Enabled = false;
             txt_nitprov.Enabled = false;
-            btn_agregar.Enabled = false;
-            btn_eliminar.Enabled = false;
-            btn_confirmar.Enabled = false;
-            button4.Enabled = false;
             dateTimePickerVencimiento.Enabled = false;
-            dateTimePickerAbono.Enabled = false;
-            txt_cantidad.Enabled = false;
-            cmb_productos.Enabled = false;
-            int ultimoNumeroOrden = controller.ObtenerUltimoNumeroOrden(campoid, tabla);
-            txt_numfactura.Text = ultimoNumeroOrden.ToString();
+            dateTimePickerAbono.Enabled = true;
+            button4.Enabled = true;
+            dgv_detalle.Columns.Clear();
         }
         public void RecibirDatosDesdeBuscarOrdenes(string idcompra, string fechaV, string proveedorfact, string subtotal, string iva, string total)
         {
@@ -125,110 +114,11 @@ namespace CapaVistaERP.Procesos
             txt_nitprov.Text = nitProveedor;
         }
 
-        private void cmb_orden_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if (cmb_orden != null && cmb_orden.SelectedIndex >= 0)
-            {
-                string seleccion = cmb_orden.SelectedItem.ToString();
-
-            // Si se selecciona "Directa", deshabilitar botones para buscar proveedor
-            if (seleccion == "Directa")
-            {
-                btn_numorden.Enabled = false;
-                txt_numcompra.Enabled = true;
-                txt_Idprov.Enabled = true;
-                txt_nombreprov.Enabled = true;
-                txt_domicilio.Enabled = true;
-                txt_telefonoprov.Enabled = true;
-                txt_nitprov.Enabled = true;
-                dateTimePickerVencimiento.Enabled = true;
-                dateTimePickerAbono.Enabled = true;
-                // Añadir las columnas con los encabezados deseados
-                dgv_detalle.Columns.Add("Cantidad", "Cantidad");
-                dgv_detalle.Columns.Add("ID_Producto", "ID_Producto");
-                dgv_detalle.Columns.Add("Nombre", "Nombre");
-                dgv_detalle.Columns.Add("Descripcion", "Descripción");
-                dgv_detalle.Columns.Add("Precio_Unitario", "Precio_unitario");
-                dgv_detalle.Columns.Add("Total", "Total");
-                txt_cantidad.Enabled = true;
-                cmb_productos.Enabled = true;
-                button4.Enabled = true;
-                btn_agregar.Enabled = true;
-                btn_eliminar.Enabled = true;
-                btn_confirmar.Enabled = true;
-            }
-
-            // Si se selecciona "Relacionada", deshabilitar TextBox para ingresar directamente
-            if (seleccion == "Relacionada")
-            {
-                btn_numorden.Enabled = true;
-                txt_numcompra.Enabled = false;
-                txt_Idprov.Enabled = false;
-                txt_nombreprov.Enabled = false;
-                txt_domicilio.Enabled = false;
-                txt_telefonoprov.Enabled = false;
-                txt_nitprov.Enabled = false;
-                dateTimePickerVencimiento.Enabled = false;
-                dateTimePickerAbono.Enabled = true;
-                btn_agregar.Enabled = false;
-                btn_confirmar.Enabled = false;
-                btn_eliminar.Enabled = false;
-                button4.Enabled = true;
-                txt_cantidad.Enabled = false;
-                cmb_productos.Enabled = false;
-                dgv_detalle.Columns.Clear();
-            }
-            }
-        }
-
         private void btn_numorden_Click(object sender, EventArgs e)
         {
             FacturaporPagarModi facturaporPagarModi = new FacturaporPagarModi();
             BuscarCompras BuscarCompras = new BuscarCompras(this, facturaporPagarModi);
             BuscarCompras.Show();
-        }
-
-        private void btn_agregar_Click(object sender, EventArgs e)
-        {
-            double precioU = 0;
-            double cantidad = 0;
-            double totalprod = 0;
-
-            // Obtener el precio unitario desde el textbox
-            if (double.TryParse(txt_preciou.Text, out precioU))
-            {
-                // Obtener la cantidad desde el textbox
-                if (double.TryParse(txt_cantidad.Text, out cantidad))
-                {
-                    // Calcular el total del producto
-                    totalprod = precioU * cantidad;
-
-                    // Obtener el ID del producto seleccionado en el ComboBox
-                    string productoSeleccionado = cmb_productos.SelectedItem.ToString();
-                    string[] parts = productoSeleccionado.Split('-');
-                    string idProducto = parts[0].Trim();
-                    //Obtener el nombre del producto
-                    string nomProducto = parts[1].Trim();
-                    //Obtener la descripcion del producto
-                    string descripcion = txt_descripcion.Text;
-                    // Agregar una fila al DataGridView con los detalles
-                    dgv_detalle.Rows.Add(cantidad, idProducto, nomProducto, descripcion, precioU, totalprod);
-                    //Limpiar los textbox para poder ingresar uno nuevo
-                    txt_cantidad.Text = "";
-                    cmb_productos.Text = "";
-                    txt_descripcion.Text = "";
-                    txt_preciou.Text = "";
-                    txt_totalfila.Text = "";
-                }
-                else
-                {
-                    MessageBox.Show("Ingrese una cantidad válida.");
-                }
-            }
-            else
-            {
-                MessageBox.Show("Ingrese un precio unitario válido.");
-            }
         }
 
         private void btn_eliminar_Click(object sender, EventArgs e)
@@ -247,80 +137,6 @@ namespace CapaVistaERP.Procesos
                     dgv_detalle.Rows.Remove(filaSeleccionada);
                 }
             }
-        }
-
-        private void btn_confirmar_Click(object sender, EventArgs e)
-        {
-            // Mostrar un cuadro de diálogo de confirmación
-            DialogResult result = MessageBox.Show("¿Está seguro que desea confirmar la orden?", "Confirmación de orden", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
-
-            if (result == DialogResult.Yes)
-            {
-                dgv_detalle.Enabled = false;
-                txt_cantidad.Enabled = false;
-                txt_descripcion.Enabled = false;
-                cmb_productos.Enabled = false;
-                txt_totalfila.Enabled = false;
-                txt_preciou.Enabled = false;
-
-                double subtotal = 0;
-                double ivaPorcentaje = 0.12;
-
-                foreach (DataGridViewRow fila in dgv_detalle.Rows)
-                {
-                    // Se asegura de que la fila no sea la fila de encabezado.
-                    if (!fila.IsNewRow)
-                    {
-                        // Obtiene el valor de la última celda de la fila.
-                        double valorCelda;
-                        if (double.TryParse(fila.Cells[dgv_detalle.ColumnCount - 1].Value.ToString(), out valorCelda))
-                        {
-                            // Suma el valor al subtotal.
-                            subtotal += valorCelda;
-                        }
-                    }
-                }
-                // Calcula el total con IVA.
-                double totalIva = (subtotal * (1 + ivaPorcentaje)) - subtotal;
-                double total = totalIva + subtotal;
-
-                //Muestra los resultados en los textbox
-                txt_subtotal.Text = subtotal.ToString();
-                txt_iva.Text = totalIva.ToString();
-                txt_total.Text = total.ToString();
-            }
-        }
-
-        public void llenarprod()
-        {
-            cmb_productos.ValueMember = "numero";
-            cmb_productos.DisplayMember = "nombre";
-
-            string[] items = controller.itemsprod();
-
-            for (int i = 0; i < items.Length; i++)
-            {
-                if (items[i] != null)
-                {
-                    if (items[i] != "")
-                    {
-                        cmb_productos.Items.Add(items[i]);
-                    }
-                }
-
-            }
-            //Funciona para buscar en el combobox
-            var dt2 = controller.enviarprod();
-            AutoCompleteStringCollection coleccion = new AutoCompleteStringCollection();
-            foreach (DataRow row in dt2.Rows)
-            {
-
-                coleccion.Add(Convert.ToString(row["cod_producto"]) + "-" + Convert.ToString(row["nombre_prod"]));
-                coleccion.Add(Convert.ToString(row["nombre_prod"]) + "-" + Convert.ToString(row["cod_producto"]));
-            }
-            cmb_productos.AutoCompleteCustomSource = coleccion;
-            cmb_productos.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
-            cmb_productos.AutoCompleteSource = AutoCompleteSource.CustomSource;
         }
 
         private void button4_Click(object sender, EventArgs e)
@@ -406,24 +222,19 @@ namespace CapaVistaERP.Procesos
 
         private void LimpiarCampos()
         {
-            string tabla = "tbl_facturaxpagar";
-            string campoid = "NoFactura";
-            int ultimoNumeroOrden = controller.ObtenerUltimoNumeroOrden(campoid, tabla);
-            txt_numfactura.Text = ultimoNumeroOrden.ToString();
             txt_numcompra.Clear();
             txt_Idprov.Clear();
             txt_nombreprov.Clear();
             txt_domicilio.Clear();
             txt_telefonoprov.Clear();
             txt_nitprov.Clear();
+            txt_numfactura.Clear();
             dateTimePickerAbono.Value = DateTime.Now; // Restablece la fecha actual
             dateTimePickerVencimiento.Value = DateTime.Now; // Restablece la fecha actual
             txt_subtotal.Clear();
             txt_iva.Clear();
             txt_total.Clear();
             txt_notas.Clear();
-            cmb_orden.SelectedIndex = -1;
-            cmb_productos.SelectedIndex = -1;
             txt_numcompra.Enabled = false;
             txt_Idprov.Enabled = false;
             btn_numorden.Enabled = false;
@@ -433,11 +244,6 @@ namespace CapaVistaERP.Procesos
             dateTimePickerVencimiento.Enabled = false;
             dateTimePickerAbono.Enabled = false;
             dgv_detalle.Enabled = false;
-            txt_cantidad.Enabled = false;
-            txt_descripcion.Enabled = false;
-            cmb_productos.Enabled = false;
-            txt_totalfila.Enabled = false;
-            txt_preciou.Enabled = false;
             DataGridViewColumn Cant = dgv_detalle.Columns["Cantidad"];
             DataGridViewColumn Nom = dgv_detalle.Columns["Nombre"];
             DataGridViewColumn des = dgv_detalle.Columns["Descripción"];
@@ -531,31 +337,5 @@ namespace CapaVistaERP.Procesos
             }
         }
 
-        private void cmb_productos_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if (cmb_productos != null && cmb_productos.SelectedIndex >= 0)
-            {
-                // Obtener el ID del producto que seleccionó el usuario
-                string selectedValue = cmb_productos.SelectedItem.ToString();
-
-                // Divide la cadena para tener ambos campos
-                string[] parts = selectedValue.Split('-');
-                string selectedProductId = parts[0].Trim();
-
-                // Llamar a la capa controlador a su método ObtenerDescripción y ObtenerPrecioUnitario
-                string descripcion = controller.ObtenerDescripcion(selectedProductId);
-                decimal precioUnitario = controller.ObtenerPrecioUnitario(selectedProductId);
-
-                // Llena los TextBox con la descripción y el precio unitario
-                txt_descripcion.Text = descripcion;
-                txt_preciou.Text = precioUnitario.ToString();
-
-                //Pasa lo que está dentro de los text box a double para poder sacar el total de la fila
-                double precioU = double.TryParse(txt_preciou.Text, out double precio) ? precio : 0.0;
-                int cantidad = int.TryParse(txt_cantidad.Text, out int cant) ? cant : 0;
-                double totalprod = precioU * cantidad;
-                txt_totalfila.Text = totalprod.ToString();
-            }
-        }
     }
 }

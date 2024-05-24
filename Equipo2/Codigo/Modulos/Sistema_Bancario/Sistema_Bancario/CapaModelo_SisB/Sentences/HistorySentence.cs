@@ -33,9 +33,14 @@ namespace CapaModelo_SisB.Sentences
             OdbcDataReader reader = cmd.ExecuteReader();
             if (reader.Read())
             {
+                if (reader.IsDBNull(0)) { 
+                    
+                    return 0;
+                }else if (reader.Read()) { 
                 return reader.GetInt32(0);
+                }
             }
-            return -1;
+            return 0;
         }
     }
 }

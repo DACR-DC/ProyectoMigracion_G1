@@ -51,6 +51,8 @@ namespace CapaVistaERP.Mantenimientos
             this.txt_nombre = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.navegador1 = new CapaVista.Navegador();
+            this.txt_reserva = new System.Windows.Forms.TextBox();
+            this.label9 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -233,7 +235,7 @@ namespace CapaVistaERP.Mantenimientos
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(155, 389);
+            this.dataGridView1.Location = new System.Drawing.Point(155, 433);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
@@ -275,11 +277,30 @@ namespace CapaVistaERP.Mantenimientos
             this.navegador1.Size = new System.Drawing.Size(1001, 96);
             this.navegador1.TabIndex = 44;
             // 
+            // txt_reserva
+            // 
+            this.txt_reserva.Location = new System.Drawing.Point(308, 353);
+            this.txt_reserva.Name = "txt_reserva";
+            this.txt_reserva.Size = new System.Drawing.Size(196, 22);
+            this.txt_reserva.TabIndex = 46;
+            this.txt_reserva.Tag = "reserva";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(152, 353);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(61, 17);
+            this.label9.TabIndex = 45;
+            this.label9.Text = "Reserva";
+            // 
             // frmMantenimientoCuentaBancaria
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1105, 612);
+            this.ClientSize = new System.Drawing.Size(1105, 664);
+            this.Controls.Add(this.txt_reserva);
+            this.Controls.Add(this.label9);
             this.Controls.Add(this.navegador1);
             this.Controls.Add(this.txt_moneda);
             this.Controls.Add(this.cb_moneda);
@@ -333,5 +354,7 @@ namespace CapaVistaERP.Mantenimientos
         private System.Windows.Forms.TextBox txt_nombre;
         private System.Windows.Forms.Label label1;
         private CapaVista.Navegador navegador1;
+        private System.Windows.Forms.TextBox txt_reserva;
+        private System.Windows.Forms.Label label9;
     }
 }

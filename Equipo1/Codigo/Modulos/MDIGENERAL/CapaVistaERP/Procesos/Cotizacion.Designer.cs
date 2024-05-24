@@ -55,6 +55,7 @@
             this.lbl_total = new System.Windows.Forms.Label();
             this.label20 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.btn_cancelar = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.lbl_subTotal = new System.Windows.Forms.Label();
             this.label22 = new System.Windows.Forms.Label();
@@ -74,7 +75,6 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.btn_ayudas = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.btn_cancelar = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -343,6 +343,17 @@
             this.panel3.Size = new System.Drawing.Size(721, 96);
             this.panel3.TabIndex = 13;
             // 
+            // btn_cancelar
+            // 
+            this.btn_cancelar.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_cancelar.Location = new System.Drawing.Point(10, 24);
+            this.btn_cancelar.Name = "btn_cancelar";
+            this.btn_cancelar.Size = new System.Drawing.Size(145, 59);
+            this.btn_cancelar.TabIndex = 27;
+            this.btn_cancelar.Text = "Cancelar";
+            this.btn_cancelar.UseVisualStyleBackColor = true;
+            this.btn_cancelar.Click += new System.EventHandler(this.btn_cancelar_Click);
+            // 
             // button1
             // 
             this.button1.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -536,6 +547,7 @@
             this.btn_ayudas.Text = "Ayuda";
             this.btn_ayudas.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btn_ayudas.UseVisualStyleBackColor = false;
+            this.btn_ayudas.Click += new System.EventHandler(this.btn_ayudas_Click);
             // 
             // groupBox2
             // 
@@ -554,17 +566,6 @@
             this.groupBox2.TabIndex = 76;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Productos Disponibles";
-            // 
-            // btn_cancelar
-            // 
-            this.btn_cancelar.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_cancelar.Location = new System.Drawing.Point(10, 24);
-            this.btn_cancelar.Name = "btn_cancelar";
-            this.btn_cancelar.Size = new System.Drawing.Size(145, 59);
-            this.btn_cancelar.TabIndex = 27;
-            this.btn_cancelar.Text = "Cancelar";
-            this.btn_cancelar.UseVisualStyleBackColor = true;
-            this.btn_cancelar.Click += new System.EventHandler(this.btn_cancelar_Click);
             // 
             // Cotizacion
             // 
@@ -586,7 +587,7 @@
             this.Controls.Add(this.lblNoCoti);
             this.Controls.Add(this.label1);
             this.Name = "Cotizacion";
-            this.Text = "frm_cotizacion";
+            this.Text = "8014-frm_cotizacion";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel3.ResumeLayout(false);

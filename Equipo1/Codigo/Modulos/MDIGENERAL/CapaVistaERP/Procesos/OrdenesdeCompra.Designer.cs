@@ -63,8 +63,6 @@ namespace CapaVistaERP.Procesos
             this.label10 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.cmb_deptosolicitante = new System.Windows.Forms.ComboBox();
-            this.label17 = new System.Windows.Forms.Label();
-            this.cmb_orden = new System.Windows.Forms.ComboBox();
             this.txt_numeroorden = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.btn_buscarProveedor = new System.Windows.Forms.Button();
@@ -427,8 +425,6 @@ namespace CapaVistaERP.Procesos
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.cmb_deptosolicitante);
-            this.groupBox1.Controls.Add(this.label17);
-            this.groupBox1.Controls.Add(this.cmb_orden);
             this.groupBox1.Controls.Add(this.txt_numeroorden);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.btn_buscarProveedor);
@@ -454,6 +450,7 @@ namespace CapaVistaERP.Procesos
             this.groupBox1.TabIndex = 29;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Datos de la órden";
+            this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
             // cmb_deptosolicitante
             // 
@@ -463,46 +460,25 @@ namespace CapaVistaERP.Procesos
             this.cmb_deptosolicitante.Size = new System.Drawing.Size(168, 27);
             this.cmb_deptosolicitante.TabIndex = 30;
             // 
-            // label17
-            // 
-            this.label17.AutoSize = true;
-            this.label17.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label17.Location = new System.Drawing.Point(133, 49);
-            this.label17.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(56, 20);
-            this.label17.TabIndex = 29;
-            this.label17.Text = "Órden";
-            // 
-            // cmb_orden
-            // 
-            this.cmb_orden.FormattingEnabled = true;
-            this.cmb_orden.Location = new System.Drawing.Point(291, 44);
-            this.cmb_orden.Margin = new System.Windows.Forms.Padding(4);
-            this.cmb_orden.Name = "cmb_orden";
-            this.cmb_orden.Size = new System.Drawing.Size(239, 27);
-            this.cmb_orden.TabIndex = 28;
-            this.cmb_orden.SelectedIndexChanged += new System.EventHandler(this.cmb_orden_SelectedIndexChanged);
-            // 
             // txt_numeroorden
             // 
             this.txt_numeroorden.Enabled = false;
-            this.txt_numeroorden.Location = new System.Drawing.Point(724, 44);
+            this.txt_numeroorden.Location = new System.Drawing.Point(291, 47);
             this.txt_numeroorden.Margin = new System.Windows.Forms.Padding(4);
             this.txt_numeroorden.Name = "txt_numeroorden";
-            this.txt_numeroorden.Size = new System.Drawing.Size(132, 24);
+            this.txt_numeroorden.Size = new System.Drawing.Size(239, 24);
             this.txt_numeroorden.TabIndex = 9;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(567, 49);
+            this.label1.Location = new System.Drawing.Point(134, 52);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(139, 20);
+            this.label1.Size = new System.Drawing.Size(85, 20);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Numero de órden";
+            this.label1.Text = "No. Órden";
             // 
             // btn_buscarProveedor
             // 
@@ -703,8 +679,6 @@ namespace CapaVistaERP.Procesos
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Label label17;
-        private System.Windows.Forms.ComboBox cmb_orden;
         private System.Windows.Forms.TextBox txt_numeroorden;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btn_buscarProveedor;

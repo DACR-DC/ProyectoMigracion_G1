@@ -128,7 +128,7 @@ namespace CapaVista_SisB
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.label1);
             this.Name = "frmEstadoCuenta";
-            this.Text = "frmEstadoCuenta";
+            this.Text = "GestCli_InformeEstado";
             ((System.ComponentModel.ISupportInitialize)(this.data_grid)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

@@ -29,6 +29,10 @@
 			<param name="Name" value="Facturas">
 			<param name="Local" value="Facturas.html">
 			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="Operaciones Proveedores">
+			<param name="Local" value="OperacionesProveedores.html">
+			</OBJECT>
 	</UL>
 	<LI> <OBJECT type="text/sitemap">
 		<param name="Name" value="Ventas">
@@ -36,12 +40,14 @@
 		</OBJECT>
 	<UL>
 		<LI> <OBJECT type="text/sitemap">
-			<param name="Name" value="Ventas">
+			<param name="Name" value="ReportePagos">
 			<param name="Local" value="Ventas.html">
+			<param name="URL" value="Ventas.html">
 			</OBJECT>
 		<LI> <OBJECT type="text/sitemap">
-			<param name="Name" value="Ventas 2">
+			<param name="Name" value="Cotizacion">
 			<param name="Local" value="Ventas 2.html">
+			<param name="URL" value="Ventas 2.html">
 			</OBJECT>
 	</UL>
 	<LI> <OBJECT type="text/sitemap">
@@ -56,6 +62,14 @@
 		<LI> <OBJECT type="text/sitemap">
 			<param name="Name" value="Bancos">
 			<param name="Local" value="Bancos.html">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="TipoCabio">
+			<param name="Local" value="Ayuda Tipo de Cambio.html">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="DispoDiaria">
+			<param name="Local" value="Ayuda en el uso del proceso Disponibilidad Diaria.html">
 			</OBJECT>
 	</UL>
 	<LI> <OBJECT type="text/sitemap">

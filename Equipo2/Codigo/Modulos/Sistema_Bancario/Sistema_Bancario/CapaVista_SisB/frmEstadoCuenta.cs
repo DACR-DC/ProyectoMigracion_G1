@@ -63,11 +63,11 @@ namespace CapaVista_SisB
         {
             foreach (DataGridViewRow row in this.data_grid.Rows)
             {
-                if (row.Cells[1].Value != null && row.Cells[1].Value.ToString().Equals("Deposito"))
+                if (row.Cells[1].Value != null && row.Cells[1].Value.ToString().Equals("Retiro"))
                 {
                     row.DefaultCellStyle.BackColor = Color.FromArgb(144, 161, 37);
                 }
-                else if (row.Cells[1].Value != null && row.Cells[1].Value.ToString().Equals("Retiro"))
+                else if (row.Cells[1].Value != null && row.Cells[1].Value.ToString().Equals("Deposito"))
                 {
                     row.DefaultCellStyle.BackColor = Color.FromArgb(206, 213, 222);
                 }

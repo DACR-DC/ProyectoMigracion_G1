@@ -45,6 +45,22 @@ namespace CapaControlador_SisB
 
 
         }
+        public string[] items1(string tabla, string campo1, string campo2)
+        {
+            string[] Items = sentencias.llenarCmb1(tabla, campo1, campo2);
+
+            return Items;
+
+
+        }
+        public string[] items2(string tabla, string campo1, string campo2)
+        {
+            string[] Items = sentencias.llenarCmb2(tabla, campo1, campo2);
+
+            return Items;
+
+
+        }
 
         ///Controlador 2///
 
@@ -54,6 +70,26 @@ namespace CapaControlador_SisB
 
 
             var dt1 = sentencias.obtener(tabla, campo1, campo2, id);
+
+            return dt1;
+        }
+
+        public DataTable enviar1(string tabla, string campo1, string campo2)
+        {
+
+
+
+            var dt1 = sentencias.obtener1(tabla, campo1, campo2);
+
+            return dt1;
+        }
+
+        public DataTable enviar2(string tabla, string campo1, string campo2)
+        {
+
+
+
+            var dt1 = sentencias.obtener2(tabla, campo1, campo2);
 
             return dt1;
         }
@@ -81,6 +117,8 @@ namespace CapaControlador_SisB
             if (cuenta == null) return false;
             TransactionSentences.updateBalanceFromAccount(cuenta.id, amount);
             HistorySentence.saveTransactionOnHistory(cuenta.id, "Deposito", amount);
+            CapaModelo_SisB.Sentencias sns = new CapaModelo_SisB.Sentencias();
+            sns.saveInBitacora(cuenta.idUsuario, 8000, "Deposito");
             return true;
         }
 
@@ -97,5 +135,15 @@ namespace CapaControlador_SisB
 
         }
 
-    }
+
+        public DataTable ObtenerCuentas()
+        {
+            return sentencias.ObtenerCuentas();
+        }
+
+        public static List<Innvoice> GetFactura(string accountNumber)
+        {
+            return InnvoiceSentences.getClientInnvoices(accountNumber);
+        }
+        }
 }
